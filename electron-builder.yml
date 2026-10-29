@@ -5,7 +5,14 @@ directories:
 files:
   - out/**/*
   - protos/**/*
-  - resources/**/*
+  # The tray icon falls back to this at runtime (tray.ts).
+  - resources/icons/icon.png
+  # better-sqlite3 loads only prebuilds/darwin-arm64.node; the rest is SQLite
+  # source and other platforms' binaries.
+  - "!node_modules/better-sqlite3/{deps,src,build}/**"
+  - "!node_modules/better-sqlite3/prebuilds/{darwin-x64,linux-*,linuxmusl-*,win32-*}.node"
+afterPack: packaging/macos/trim-electron-locales.mjs
+afterAllArtifactBuild: packaging/macos/dmg-to-ulmo.mjs
 extraResources:
   - from: protos
     to: protos
@@ -28,6 +35,9 @@ mac:
   category: public.app-category.productivity
   # The native audio bridge targets macOS 14 (binding.gyp).
   minimumSystemVersion: "14.0"
+  # Chromium's own UI strings; the app ships only these two languages.
+  # trim-electron-locales.mjs applies the list inside the framework too.
+  electronLanguages: [en, zh_CN]
   target:
     - target: dmg
       arch: arm64
