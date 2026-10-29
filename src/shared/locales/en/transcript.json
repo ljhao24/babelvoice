@@ -1,0 +1,102 @@
+{
+  "list": {
+    "count_one": "{{count}} meeting",
+    "count_other": "{{count}} meetings",
+    "searchLabel": "Search meeting titles",
+    "searchPlaceholder": "Search titles",
+    "clearSearch": "Clear search",
+    "loadFailed": "Couldn't read meetings: {{message}}",
+    "retry": "Try again",
+    "startedAt": "Started {{time}}",
+    "lineCount_one": "{{count}} line",
+    "lineCount_other": "{{count}} lines",
+    "openLive": "Open the meeting in progress, \"{{title}}\"",
+    "shortHidden_one": "{{count}} meeting under {{min}} lines isn't shown.",
+    "shortHidden_other": "{{count}} meetings under {{min}} lines aren't shown.",
+    "showShort": "Show",
+    "hideShort": "Hide meetings under {{min}} lines",
+    "limited": "Only the latest {{count}} meetings are listed.",
+    "empty": {
+      "title": "No meetings yet",
+      "description": "Once you start a meeting, both sides of the conversation are saved here to read back any time.",
+      "action": "Start a Meeting"
+    },
+    "onlyShort": {
+      "title": "Only very short meetings",
+      "description_one": "{{count}} meeting has fewer than {{min}} lines, so it's hidden by default.",
+      "description_other": "All {{count}} meetings have fewer than {{min}} lines, so they're hidden by default."
+    },
+    "noResults": {
+      "title": "No meetings found",
+      "description": "No meeting title contains \"{{query}}\".",
+      "descriptionShort_one": "Only {{count}} meeting under {{min}} lines has \"{{query}}\" in its title.",
+      "descriptionShort_other": "Only {{count}} meetings under {{min}} lines have \"{{query}}\" in their titles."
+    }
+  },
+  "status": {
+    "live": "In progress",
+    "interrupted": "Interrupted",
+    "interruptedHint": "The app quit unexpectedly while this meeting was running, so it was ended automatically. Everything said before that was saved."
+  },
+  "day": {
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "length": {
+    "underMinute": "Under 1 min",
+    "minutes": "{{count}} min",
+    "hours": "{{count}} hr",
+    "hoursMinutes": "{{h}} hr {{m}} min"
+  },
+  "languagePair": "{{src}} ⇄ {{tgt}}",
+  "endedBy": {
+    "manual": "Ended by you",
+    "idle-timeout": "Ended after a long silence",
+    "app-quit": "Ended when the app quit",
+    "crashed": "Interrupted"
+  },
+  "actions": {
+    "more": "More actions for \"{{title}}\"",
+    "rename": "Rename…",
+    "delete": "Delete…",
+    "renameTitle": "Rename Meeting",
+    "titleLabel": "Title",
+    "renameFailed": "Couldn't rename: {{message}}",
+    "gone": "The meeting no longer exists",
+    "deleteTitle": "Delete \"{{title}}\"?",
+    "deleteDescription_one": "The meeting and its {{count}} line will be deleted. This can't be undone.",
+    "deleteDescription_other": "The meeting and its {{count}} lines will be deleted. This can't be undone.",
+    "deleteConfirm": "Delete",
+    "deleteFailed": "Couldn't delete: {{message}}"
+  },
+  "replay": {
+    "back": "Back to History",
+    "missing": {
+      "title": "Meeting not found",
+      "description": "It may have been deleted."
+    },
+    "overview": "Overview",
+    "date": "Date",
+    "time": "Time",
+    "length": "Length",
+    "youSpeak": "You speak",
+    "theySpeak": "They speak",
+    "engine": "Translation service",
+    "lines": "Conversation",
+    "linesSplit_one": "{{count}} line (you {{speak}} · them {{listen}})",
+    "linesSplit_other": "{{count}} lines (you {{speak}} · them {{listen}})",
+    "endedBy": "Ended",
+    "copy": "Copy Conversation",
+    "copied_one": "Copied {{count}} line",
+    "copied_other": "Copied {{count}} lines",
+    "copyFailed": "Couldn't copy: {{message}}",
+    "transcript": "Conversation",
+    "shown": "{{count}} of {{total}}",
+    "findLabel": "Find in conversation",
+    "findPlaceholder": "Find",
+    "filterLabel": "Filter by speaker",
+    "empty": "Nothing was said in this meeting.",
+    "noMatches": "No line contains \"{{query}}\".",
+    "noLinesForFilter": "This side didn't speak in this meeting."
+  }
+}

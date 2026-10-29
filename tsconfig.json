@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.web.json" }
+  ],
+  // Mirrors tsconfig.web.json's `@/*` alias so the shadcn CLI, which only
+  // reads this root file, resolves components.json aliases to src/renderer.
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/renderer/*"]
+    }
+  }
+}

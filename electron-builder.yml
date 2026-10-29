@@ -1,0 +1,48 @@
+appId: com.ljhao.babelvoice
+productName: BabelVoice
+directories:
+  output: dist
+files:
+  - out/**/*
+  - protos/**/*
+  - resources/**/*
+extraResources:
+  - from: protos
+    to: protos
+  - from: resources/babelvoice
+    to: babelvoice
+    filter:
+      - "**/*"
+  - from: resources/native
+    to: native
+    filter:
+      - "**/*"
+  # Opened by the 「查看图文教程」 buttons (platform/macos.ts openSetupGuide).
+  - from: docs/SETUP-macOS.md
+    to: docs/SETUP-macOS.md
+  # Chinese permission prompts; the English ones are extendInfo below.
+  - from: packaging/macos/zh_CN.lproj/InfoPlist.strings
+    to: zh_CN.lproj/InfoPlist.strings
+mac:
+  icon: resources/icons/icon.icns
+  category: public.app-category.productivity
+  # The native audio bridge targets macOS 14 (binding.gyp).
+  minimumSystemVersion: "14.0"
+  target:
+    - target: dmg
+      arch: arm64
+  # Signs with the keychain's "Developer ID Application" cert; without one,
+  # electron-builder falls back to any other cert (e.g. "Apple Development"),
+  # which only runs on this Mac. Notarizes when APPLE_KEYCHAIN_PROFILE (or
+  # APPLE_ID / APPLE_API_KEY) is set, and Apple rejects any signature but
+  # Developer ID. See docs/RELEASE-macOS.md.
+  hardenedRuntime: true
+  entitlements: packaging/macos/entitlements.mac.plist
+  entitlementsInherit: packaging/macos/entitlements.mac.plist
+  gatekeeperAssess: false
+  extendInfo:
+    NSMicrophoneUsageDescription: BabelVoice uses the microphone to translate what you say for the others in the meeting.
+    NSAudioCaptureUsageDescription: BabelVoice records your meeting app's audio to translate what the others say for you.
+# TODO(v2-windows): enable Windows build target in v2.
+# win:
+#   target: nsis

@@ -1,0 +1,132 @@
+{
+  "header": {
+    "title": "欢迎使用 BabelVoice",
+    "sub": "约两分钟完成基础配置。",
+    "skip": "跳过",
+    "skipConfirm": "确定跳过引导？可在「设置 → 高级」中重新启动。"
+  },
+  "stepLabels": {
+    "1": "安装驱动",
+    "2": "授予权限",
+    "3": "配置服务",
+    "4": "测试说话",
+    "5": "测试聆听",
+    "6": "完成"
+  },
+  "stepCounter": "第 {{n}} / {{total}} 步",
+  "next": "下一步",
+  "step1": {
+    "title": "安装音频驱动",
+    "desc": "macOS 不允许应用之间直接传递音频，需要安装一个虚拟音频驱动作为中转，会议软件才能接收 AI 翻译后的语音。安装时系统会要求输入一次开机密码。",
+    "driverName": "BabelVoice 虚拟驱动",
+    "status": {
+      "checking": "正在检测…",
+      "installing": "正在安装。请在系统弹窗中输入开机密码并允许安装。",
+      "installedAlive": "已安装并注册为系统音频输出设备。",
+      "installedWaiting": "已安装，正在等待系统识别…",
+      "notInstalled": "尚未安装。"
+    },
+    "buttons": {
+      "checking": "正在检查…",
+      "recheck": "重新检测",
+      "install": "安装",
+      "installing": "安装中…",
+      "retry": "重试"
+    },
+    "doneBanner": "驱动已注册为系统音频输出设备",
+    "startFailed": "启动安装失败"
+  },
+  "step2": {
+    "title": "授予所需权限",
+    "desc": "麦克风权限用于翻译你的语音；屏幕录制权限用于捕获会议音频（macOS 将系统音频归类于此）。授权一次即可。",
+    "mic": {
+      "title": "麦克风",
+      "desc": "点击右侧按钮，在系统弹窗中选择「允许」。"
+    },
+    "screen": {
+      "title": "屏幕录制（用于捕获会议音频）",
+      "desc": "macOS 将系统音频归类于屏幕录制权限。点击授权后请在系统弹窗中允许。",
+      "fallbackHint": "在系统设置中授权后，需完全退出 BabelVoice 再重新启动方可生效。"
+    },
+    "row": {
+      "granted": "已授权",
+      "requesting": "请求中…",
+      "grant": "授权"
+    },
+    "tip": "若系统弹窗未出现，可能是之前已拒绝。打开「系统设置 → 隐私与安全性 → 屏幕录制」找到 BabelVoice 并打开，然后<bold>完全退出</bold>本应用再启动。"
+  },
+  "step3": {
+    "title": "配置翻译服务",
+    "desc": "选择翻译服务商并填入密钥，将立即测试连通性。",
+    "savedHintDoubao": "密钥已加密保存到本机（App Key ••••{{tail}}）",
+    "savedHintApiKey": "密钥已加密保存到本机（••••{{tail}}）",
+    "buttons": {
+      "saving": "保存中…",
+      "testing": "测试中…",
+      "saveAndTest": "保存并测试连接",
+      "change": "更换",
+      "retest": "重新测试"
+    },
+    "fields": {
+      "appKey": "App Key",
+      "accessKey": "Access Key",
+      "apiKey": "API Key",
+      "workspaceId": "业务空间 ID（可选）"
+    }
+  },
+  "connectivity": {
+    "running": "正在连接服务…",
+    "ok": "连接正常，密钥可用",
+    "failed": "连接失败{{codeSuffix}}：{{message}}"
+  },
+  "step4": {
+    "title": "测试说话（中 → 英）",
+    "desc": "测试正向通路：BabelVoice 接收你的中文语音，翻译为英文并通过扬声器播放。通过此项后，对方将能在会议中听到 AI 翻译后的语音。",
+    "card": {
+      "title": "说一句中文（中 → 英）",
+      "desc": "点击后说一句中文，例如「你好世界」或「今天天气真不错」。本步骤固定为中文翻译为英文，扬声器会播放英文译音。其他语言对可在「设置 → 翻译」中调整。",
+      "primary": "开始说话",
+      "active": "停止",
+      "done": "再测一次",
+      "retry": "重试"
+    },
+    "errors": {
+      "translationFailed": "翻译失败",
+      "speakTimeout": "30 秒内未检测到翻译，请检查麦克风后重试。"
+    }
+  },
+  "step5": {
+    "title": "测试聆听（英 → 中）",
+    "desc": "测试反向通路：{{deviceName}} 从系统音频中捕获一段示例英文，AI 实时生成中文字幕。",
+    "card": {
+      "title": "播放示例英文（英 → 中）",
+      "desc": "点击后将播放一段示例英文音频。{{deviceName}} 从系统音频中捕获，并在下方生成中文字幕。",
+      "primary": "开始测试",
+      "active": "停止",
+      "done": "再测一次",
+      "retry": "重试"
+    },
+    "errors": {
+      "listenFailed": "聆听失败",
+      "listenTimeout": "15 秒内未检测到中文字幕，请确认系统音频权限后重试。",
+      "audioLoadFailed": "示例音频加载失败",
+      "audioPlayFailed": "示例音频播放失败：{{message}}",
+      "audioPlayFailedSimple": "示例音频播放失败"
+    }
+  },
+  "step6": {
+    "title": "在会议软件中将麦克风设为 BabelVoice",
+    "desc": "在 Zoom / 腾讯会议 / 飞书 / Teams 等会议软件的麦克风设置中，将输入设备改为 BabelVoice，对方即可听到 AI 翻译后的语音。",
+    "finish": "进入应用"
+  },
+  "probeStages": {
+    "speak": ["接入麦克风", "识别中文", "翻译英文", "播放译音"],
+    "listen": ["播放示例", "捕获音频", "翻译中文", "显示字幕"]
+  },
+  "badges": {
+    "routingActive": "ROUTING ACTIVE",
+    "permissionsGranted": "PERMISSIONS GRANTED",
+    "speakOk": "SPEAK · ZH → EN OK",
+    "listenOk": "LISTEN · EN → ZH OK"
+  }
+}

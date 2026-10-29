@@ -1,0 +1,132 @@
+{
+  "header": {
+    "title": "Welcome to BabelVoice",
+    "sub": "About two minutes to finish basic setup.",
+    "skip": "Skip",
+    "skipConfirm": "Skip onboarding? You can re-run it from Settings → Advanced."
+  },
+  "stepLabels": {
+    "1": "Driver",
+    "2": "Permissions",
+    "3": "Service",
+    "4": "Test speak",
+    "5": "Test listen",
+    "6": "Finish"
+  },
+  "stepCounter": "Step {{n}} of {{total}}",
+  "next": "Next",
+  "step1": {
+    "title": "Install the audio driver",
+    "desc": "macOS does not let apps pipe audio between each other directly. A virtual audio driver acts as the bridge so meeting apps can receive translated speech. The system asks for your password once during install.",
+    "driverName": "BabelVoice virtual driver",
+    "status": {
+      "checking": "Checking…",
+      "installing": "Installing. Enter your admin password in the system prompt and allow install.",
+      "installedAlive": "Installed and registered as a system audio output device.",
+      "installedWaiting": "Installed. Waiting for the system to recognize it…",
+      "notInstalled": "Not installed yet."
+    },
+    "buttons": {
+      "checking": "Checking…",
+      "recheck": "Re-check",
+      "install": "Install",
+      "installing": "Installing…",
+      "retry": "Retry"
+    },
+    "doneBanner": "Driver registered as a system audio output device",
+    "startFailed": "Failed to start installer"
+  },
+  "step2": {
+    "title": "Grant required permissions",
+    "desc": "Microphone permission is used to translate your speech. Screen-recording permission is used to capture meeting audio (macOS groups system audio under it). One-time authorization.",
+    "mic": {
+      "title": "Microphone",
+      "desc": "Click the button on the right and choose \"Allow\" in the system prompt."
+    },
+    "screen": {
+      "title": "Screen recording (for meeting-audio capture)",
+      "desc": "macOS groups system-audio capture under screen recording. Click to authorize, then allow it in the system prompt.",
+      "fallbackHint": "After granting permission in System Settings, fully quit and relaunch BabelVoice for it to take effect."
+    },
+    "row": {
+      "granted": "Authorized",
+      "requesting": "Requesting…",
+      "grant": "Grant"
+    },
+    "tip": "If the system prompt did not appear, the request may have been denied previously. Open System Settings → Privacy & Security → Screen Recording, find BabelVoice, enable it, then <bold>fully quit</bold> and relaunch the app."
+  },
+  "step3": {
+    "title": "Configure a translation service",
+    "desc": "Choose a translation provider and paste the key. Connectivity is verified immediately.",
+    "savedHintDoubao": "Key encrypted on this device (App Key ••••{{tail}})",
+    "savedHintApiKey": "Key encrypted on this device (••••{{tail}})",
+    "buttons": {
+      "saving": "Saving…",
+      "testing": "Testing…",
+      "saveAndTest": "Save and test",
+      "change": "Replace",
+      "retest": "Retest connection"
+    },
+    "fields": {
+      "appKey": "App Key",
+      "accessKey": "Access Key",
+      "apiKey": "API Key",
+      "workspaceId": "Workspace ID (optional)"
+    }
+  },
+  "connectivity": {
+    "running": "Connecting to the service…",
+    "ok": "Connected. Key is valid.",
+    "failed": "Connection failed{{codeSuffix}}: {{message}}"
+  },
+  "step4": {
+    "title": "Test speak (ZH → EN)",
+    "desc": "Verify the forward path: your Chinese speech is translated to English and played through the speaker. Once this works, the other party will hear the translated voice in the meeting.",
+    "card": {
+      "title": "Say a sentence in Chinese (ZH → EN)",
+      "desc": "Click and say a Chinese sentence — e.g. \"你好世界\" or \"今天天气真不错\". This step is fixed at Chinese-to-English; the speaker plays the English translation. Adjust language pairs in Settings → Translation.",
+      "primary": "Start speaking",
+      "active": "Stop",
+      "done": "Test again",
+      "retry": "Retry"
+    },
+    "errors": {
+      "translationFailed": "Translation failed",
+      "speakTimeout": "No translation in 30 seconds. Check the microphone and retry."
+    }
+  },
+  "step5": {
+    "title": "Test listen (EN → ZH)",
+    "desc": "Verify the reverse path: {{deviceName}} captures a sample English clip from system audio and produces Chinese subtitles in real time.",
+    "card": {
+      "title": "Play sample English (EN → ZH)",
+      "desc": "A sample English clip is played. {{deviceName}} captures it from system audio and shows the Chinese subtitle below.",
+      "primary": "Run test",
+      "active": "Stop",
+      "done": "Test again",
+      "retry": "Retry"
+    },
+    "errors": {
+      "listenFailed": "Listening failed",
+      "listenTimeout": "No Chinese subtitle in 15 seconds. Confirm system-audio permission and retry.",
+      "audioLoadFailed": "Failed to load sample audio",
+      "audioPlayFailed": "Failed to play sample audio: {{message}}",
+      "audioPlayFailedSimple": "Failed to play sample audio"
+    }
+  },
+  "step6": {
+    "title": "Set BabelVoice as the microphone in your meeting app",
+    "desc": "In Zoom, Tencent Meeting, Lark, Teams, etc., change the microphone input to BabelVoice. The other party will then hear the translated voice.",
+    "finish": "Open the app"
+  },
+  "probeStages": {
+    "speak": ["Mic input", "Recognize CN", "Translate EN", "Play TTS"],
+    "listen": ["Play sample", "Capture audio", "Translate CN", "Show subtitle"]
+  },
+  "badges": {
+    "routingActive": "ROUTING ACTIVE",
+    "permissionsGranted": "PERMISSIONS GRANTED",
+    "speakOk": "SPEAK · ZH → EN OK",
+    "listenOk": "LISTEN · EN → ZH OK"
+  }
+}

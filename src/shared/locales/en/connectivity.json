@@ -1,0 +1,8 @@
+{
+  "fallbackError": "Connection failed",
+  "missingDoubaoKey": "Doubao API key not configured",
+  "missingQwenKey": "Qwen API key not configured",
+  "missingGeminiKey": "Gemini API key not configured",
+  "missingOpenAiKey": "OpenAI API key not configured",
+  "connectTimeout": "Connection timed out. Check your network and retry."
+}

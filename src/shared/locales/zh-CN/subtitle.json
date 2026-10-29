@@ -1,0 +1,20 @@
+{
+  "placeholder": {
+    "listening": "聆听中…",
+    "idle": "未开启",
+    "waiting": "等待开始翻译…"
+  },
+  "closeAria": "关闭字幕",
+  "closeTitle": "关闭字幕窗",
+  "who": {
+    "listen": "对方",
+    "speak": "你",
+    "listenSpeaker": "对方 {{n}}"
+  },
+  "langPair": "{{from}} → {{to}}",
+  "source": {
+    "show": "显示原文",
+    "hide": "隐藏原文"
+  },
+  "newLines": "{{count}} 条新字幕"
+}

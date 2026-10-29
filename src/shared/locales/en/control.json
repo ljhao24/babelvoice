@@ -1,0 +1,195 @@
+{
+  "credentialBanner": {
+    "engineNotConfigured": "{{engine}} has no API key configured. Translation is unavailable.",
+    "goToSettings": "Open Settings"
+  },
+  "active": {
+    "header": "Meeting in progress",
+    "headerStatus": "{{duration}} · {{count}} lines",
+    "endMeeting": "End meeting",
+    "showOverlay": "Show subtitles",
+    "hideOverlay": "Hide subtitles",
+    "duration": {
+      "hourMinute": "{{h}}h {{m}}m",
+      "minuteSecond": "{{m}}m {{s}}s",
+      "second": "{{s}}s"
+    },
+    "section": {
+      "title": "Live translation"
+    },
+    "live": "Live",
+    "endConfirm": {
+      "title": "End the meeting?",
+      "description": "Running translation stops. The conversation is saved and stays in History."
+    }
+  },
+  "speak": {
+    "title": "Translate what you say",
+    "chip": "You → them",
+    "desc": "Translates your speech in real time and sends it into the meeting",
+    "status": {
+      "starting": "Starting",
+      "running": "Live",
+      "idle": "Idle",
+      "finishingPlayback": "Finishing audio",
+      "stopping": "Stopping"
+    },
+    "buttons": {
+      "cancelStart": "Cancel",
+      "finishPlayback": "Playing remaining audio…",
+      "stopping": "Stopping…",
+      "stop": "Stop translating",
+      "start": "Start translating"
+    },
+    "hotkeyHint": "Press once to start, again to stop",
+    "target": "into the meeting",
+    "hotkeyLabel": "Shortcut"
+  },
+  "listen": {
+    "title": "Understand what they say",
+    "chip": "Them → you",
+    "desc": "Turns their speech into real-time subtitles",
+    "status": {
+      "starting": "Starting",
+      "running": "Listening",
+      "idle": "Idle",
+      "finishingSubtitle": "Finishing subtitles",
+      "stopping": "Stopping"
+    },
+    "buttons": {
+      "cancelStart": "Cancel",
+      "finishSubtitle": "Finishing subtitles…",
+      "stopping": "Stopping…",
+      "stop": "Stop listening",
+      "start": "Start listening"
+    },
+    "permission": {
+      "granted": "Meeting audio permission granted",
+      "checking": "Checking permission…",
+      "needed": "Screen-recording permission is required to capture meeting audio",
+      "grantCta": "Grant permission",
+      "label": "Meeting audio access",
+      "grantedShort": "Granted"
+    },
+    "target": "as subtitles"
+  },
+  "transcriptPanel": {
+    "title": "This meeting's transcript",
+    "lineCount": "{{count}} lines",
+    "empty": "Lines will appear here once translation or listening starts.",
+    "you": "You",
+    "other": "Them",
+    "otherSpeaker": "Speaker {{n}}",
+    "olderHidden": "Showing the latest {{count}} lines — the full transcript is in History.",
+    "all": "All",
+    "jumpToLatest": "Jump to latest"
+  },
+  "testPanel": {
+    "trigger": "Test translation",
+    "hintActive": "Test in progress",
+    "hintIdle": "Run a full test",
+    "modal": {
+      "ariaLabel": "Test translation",
+      "eyebrow": "Test before you start",
+      "title": "Test translation",
+      "sub": "Run a full translation pass with your current settings to verify microphone, speaker, and subtitles."
+    },
+    "noKey": "Add an API key in Settings before running the test.",
+    "speak": {
+      "starting": "Starting…",
+      "stopping": "Stopping…",
+      "stop": "Stop speak test",
+      "start": "Test speak"
+    },
+    "listen": {
+      "starting": "Starting…",
+      "stopping": "Stopping…",
+      "stop": "Stop listen test",
+      "start": "Test listen"
+    },
+    "helpSpeak": "Speak into the mic — your «{{src}}» is translated to «{{tgt}}» and played back.",
+    "helpListen": "Captures system audio and produces «{{src}}» subtitles. The clips below simulate the other party speaking.",
+    "audio": {
+      "title": "Sample audio",
+      "statusActive": "Listening · click a clip to translate it",
+      "statusStarting": "Starting listen…",
+      "statusIdle": "Click a clip to start listening",
+      "empty": "Sample clips coming soon.",
+      "emptySub": "Sample clips in different languages will appear here. Click one to translate it live.",
+      "stop": "Stop",
+      "play": "Play"
+    },
+    "clips": {
+      "faradayCandle": "English · Science lecture",
+      "dickensEngland": "English · Historical narrative"
+    },
+    "errors": {
+      "listenStartFailed": "Failed to start listening: {{message}}",
+      "listenStartFailedSimple": "Failed to start listening",
+      "audioLoadFailed": "Failed to load clip «{{label}}»",
+      "playFailed": "Playback failed: {{message}}",
+      "playFailedSimple": "Playback failed"
+    },
+    "footer": {
+      "hintRunning": "Closing this panel does not stop the test. The button shows current status.",
+      "hintIdle": "You can reopen this panel any time.",
+      "close": "Close"
+    }
+  },
+  "monitor": {
+    "title": "Meeting monitor",
+    "summaryTitle": "Usage & cost",
+    "costLabel": "Estimated cost",
+    "costNone": "Unpriced",
+    "costIncomplete": "Some usage has no price; the estimate runs low",
+    "empty": "Connection status and usage show up here once you start translating or listening.",
+    "links": "Connection",
+    "usage": "Usage",
+    "state": {
+      "idle": "Ended",
+      "connecting": "Connecting",
+      "live": "Connected",
+      "reconnecting": "Reconnecting",
+      "finishing": "Wrapping up",
+      "failed": "Disconnected"
+    },
+    "rtt": "Latency {{ms}} ms",
+    "handshake": "Handshake {{ms}} ms",
+    "ready": "Ready {{ms}} ms",
+    "lastRx": "Last data {{age}} ago",
+    "reconnects": "{{count}} reconnects",
+    "failures": "{{count}} failures",
+    "audioIn": "Audio sent {{duration}}",
+    "audioOut": "Speech received {{duration}}",
+    "tokens": {
+      "inputAudio": "Audio in",
+      "inputText": "Text in",
+      "cachedInput": "Cached in",
+      "outputText": "Text out",
+      "outputAudio": "Audio out"
+    },
+    "estimated": "estimated",
+    "estimatedHint": "Tokens derived from audio duration; the provider does not report them",
+    "footnote": "Amounts are estimates from unit prices; your provider's bill is what counts.",
+    "editPrices": "Edit prices",
+    "seconds": "{{n}} s",
+    "minutes": "{{n}} min",
+    "details": "Connection and usage details"
+  },
+  "idle": {
+    "title": "Start a meeting",
+    "description": "Translates what you say and what they say at the same time. The whole conversation is saved.",
+    "start": "Start meeting",
+    "groups": {
+      "language": "Languages",
+      "audio": "Audio"
+    },
+    "swap": "Swap languages",
+    "voiceHint": "The other side hears your translation in this voice.",
+    "sourceHint": "Listen to this app only, so other sounds are not translated.",
+    "recent": "Recent meetings",
+    "viewAll": "View all",
+    "recentMeta": "{{day}} {{time}} · {{length}} · {{count}} lines",
+    "voice": "Translated voice"
+  }
+}

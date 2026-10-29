@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <title>Subtitle Overlay</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      html,
+      body,
+      #root {
+        background: transparent;
+        margin: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./subtitle.tsx"></script>
+  </body>
+</html>

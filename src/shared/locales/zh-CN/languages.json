@@ -1,0 +1,48 @@
+{
+  "names": {
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語",
+    "id": "Bahasa Indonesia",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "voices": {
+    "doubao": {
+      "clone": {
+        "label": "智能复刻你的声音（推荐）",
+        "hint": "翻译会用接近你本人的音色说出，对方听起来仿佛是你在说外语。"
+      },
+      "femaleNatural": {
+        "label": "女声 · 自然温和",
+        "hint": "温和清晰的女声，适合各类正式场合。"
+      },
+      "maleNatural": {
+        "label": "男声 · 自然有感情",
+        "hint": "富有情感表达的男声。"
+      }
+    },
+    "qwen": {
+      "clone": { "label": "复刻说话人的声音", "hint": "实时复刻发言人音色；收听时随发言人切换，复刻完成前用默认音色过渡。" },
+      "Tina": { "label": "甜甜 Tina · 女声 · 温暖", "hint": "默认音色，普通话 + 28 种外语。" },
+      "Serena": { "label": "苏瑶 Serena · 女声 · 温柔", "hint": "普通话 + 28 种外语。" },
+      "Maia": { "label": "四月 Maia · 女声 · 知性", "hint": "普通话 + 28 种外语。" },
+      "Cindy": { "label": "林欣宜 Cindy · 女声 · 台湾腔", "hint": "台湾口音中文 + 28 种外语。" },
+      "Jennifer": { "label": "詹妮弗 Jennifer · 女声 · 美语", "hint": "电影质感美语女声，普通话 + 28 种外语。" },
+      "Ethan": { "label": "晨煦 Ethan · 男声 · 阳光", "hint": "普通话 + 28 种外语。" },
+      "Raymond": { "label": "林川野 Raymond · 男声 · 清亮", "hint": "普通话 + 28 种外语。" },
+      "Andre": { "label": "安德雷 Andre · 男声 · 沉稳", "hint": "磁性沉稳，普通话 + 28 种外语。" },
+      "Harvey": { "label": "厚 Harvey · 男声 · 低沉", "hint": "低沉温和，普通话 + 28 种外语。" },
+      "Aiden": { "label": "艾登 Aiden · 男声 · 美语", "hint": "美语大男孩，普通话 + 28 种外语。" }
+    }
+  },
+  "engineNames": {
+    "doubao": "豆包",
+    "qwen": "通义千问",
+    "gemini": "Gemini",
+    "openai": "OpenAI",
+    "mock": "Mock 引擎（离线）"
+  }
+}

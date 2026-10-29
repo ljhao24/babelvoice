@@ -1,0 +1,13 @@
+{
+  "brandSubtitle": "v0.2 · macOS",
+  "groups": {
+    "translation": "同传",
+    "config": "配置"
+  },
+  "items": {
+    "control": "会议",
+    "transcript": "历史",
+    "audio": "音频路由",
+    "settings": "设置"
+  }
+}

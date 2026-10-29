@@ -1,0 +1,96 @@
+{
+  "intro": "BabelVoice 在你和会议软件之间转送声音：你说的话翻译后，经虚拟麦克风送进会议；会议里的声音翻译成字幕给你看。两条线路都「已就绪」就可以开会了。",
+  "ready": "已就绪",
+  "pending": "还差 {{count}} 步",
+  "checking": "正在检查…",
+  "guide": "查看教程",
+  "flow": {
+    "translateTo": "译成 {{language}}",
+    "needsPermission": "需要权限"
+  },
+  "speak": {
+    "title": "你说话 → 对方听到译音",
+    "flow": {
+      "mic": "你的麦克风",
+      "micMissing": "选中的没有连接",
+      "virtualMic": "虚拟麦克风",
+      "driver": {
+        "checking": "正在检查…",
+        "missing": "未安装",
+        "installing": "安装中…",
+        "not-loaded": "未加载",
+        "ready": "BabelVoice"
+      },
+      "meetingApp": "会议软件",
+      "meetingAppDetail": "麦克风选 BabelVoice"
+    },
+    "driver": {
+      "label": "BabelVoice 虚拟麦克风",
+      "description": {
+        "checking": "macOS 不允许应用之间直接传声音，会议软件要通过它收到你的译音。",
+        "missing": "macOS 不允许应用之间直接传声音。装上它，会议软件才能把它当作麦克风，收到你的译音。",
+        "installing": "安装程序已打开，按提示完成安装（需要输入这台 Mac 的登录密码）。",
+        "not-loaded": "驱动已安装，但系统还没有加载它。重启 Mac 后生效。",
+        "ready": "会议软件可以把它选作麦克风。"
+      },
+      "install": "安装…",
+      "retry": "重新安装…",
+      "installing": "安装中…",
+      "installed": "已安装",
+      "notLoaded": "未加载",
+      "installFailed": "无法打开安装程序：{{message}}",
+      "installFailedSimple": "无法打开安装程序，请再试一次。"
+    },
+    "micPermission": {
+      "label": "麦克风权限",
+      "needed": "BabelVoice 还没有使用麦克风的权限，听不到你说话。",
+      "denied": "麦克风权限被拒绝了。在「系统设置 › 隐私与安全性 › 麦克风」里打开 BabelVoice，然后重新打开 BabelVoice。",
+      "allow": "允许…"
+    },
+    "mic": {
+      "label": "麦克风",
+      "description": "你说的话从这里收音。",
+      "missing": "选中的麦克风没有连接，请换一个，或接上它。",
+      "systemDefault": "系统默认",
+      "systemDefaultNamed": "系统默认（{{name}}）",
+      "disconnected": "已选的麦克风（未连接）"
+    },
+    "meetingApp": {
+      "label": "在会议软件里选 BabelVoice",
+      "description": "在 Zoom、腾讯会议、Teams 等软件的音频设置里，把麦克风设为 BabelVoice，对方就能听到你的译音。"
+    },
+    "verify": "想确认对方听得到：在会议软件里测试麦克风，开始翻译后说一句话，音量条有跳动就对了。你的译音只送进会议，这台 Mac 上听不到。"
+  },
+  "listen": {
+    "title": "对方说话 → 你看到字幕",
+    "flow": {
+      "source": "会议的声音",
+      "allAudio": "全部系统声音",
+      "subtitles": "字幕窗",
+      "subtitlesOnly": "只显示字幕",
+      "withVoice": "并播放译音"
+    },
+    "permission": {
+      "label": "屏幕与系统录音权限",
+      "needed": "macOS 把收听其他应用的声音归在这个权限里。没有它，BabelVoice 听不到会议。",
+      "granted": "BabelVoice 靠它收听会议软件的声音。",
+      "allowed": "已允许",
+      "allow": "允许…",
+      "openSettings": "打开系统设置…",
+      "restartHint": "在系统设置里允许后，需要完全退出并重新打开 BabelVoice 才生效。"
+    },
+    "output": {
+      "label": "播放译音的设备",
+      "description": "对方说话的译音从这里播放。",
+      "unused": "在「会议」页打开「{{setting}}」后才会用到；现在只显示字幕。",
+      "defaultIsVirtual": "系统默认输出现在是 BabelVoice，译音会被送进会议。请选一个耳机或扬声器。",
+      "systemDefault": "系统默认",
+      "systemDefaultNamed": "系统默认（{{name}}）"
+    },
+    "footnote": "收听哪个应用、要不要播放译音，在「会议」页设置。"
+  },
+  "virtualDeviceHintMac": "BabelVoice（点击「安装」配置驱动；安装后将会议软件麦克风设为 BabelVoice）",
+  "virtualDeviceHintWindows": "VB-Cable（Windows 引导将于 v2 提供）",
+  "screenCaptureResetHint": "若未出现弹窗，可能是此前已拒绝授权。可在终端运行 `tccutil reset ScreenCapture {{bundleId}}` 后重启应用，或在系统设置中手动开启。",
+  "deviceLabelMissing": "（设备未授权）"
+}

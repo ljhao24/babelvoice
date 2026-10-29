@@ -1,0 +1,285 @@
+{
+  "header": {
+    "eyebrow": "Settings"
+  },
+  "sections": {
+    "translation": "Translation service",
+    "corpus": "Vocabulary",
+    "pricing": "Cost estimates",
+    "appearance": "Appearance",
+    "subtitle": "Subtitles",
+    "general": "General"
+  },
+  "hints": {
+    "translation": "Pick the live translation service and add its API key. Languages and voice are chosen on the meeting page.",
+    "corpus": "Terms, hot words and replacements make names and jargon come out right and consistent. Doubao only for now.",
+    "appearance": "Theme and interface language.",
+    "subtitle": "Layout, background, size and content of the floating subtitle window.",
+    "pricing": "The meeting monitor uses these unit prices to estimate each meeting. They start at list price; change them to your contract rates. Stored on this Mac only.",
+    "general": "Shortcuts and the setup guide."
+  },
+  "language": {
+    "label": "Interface language",
+    "hint": "Follows the system locale by default.",
+    "options": {
+      "zh-CN": "简体中文",
+      "en": "English"
+    },
+    "sectionTitle": "语言 / Language"
+  },
+  "translation": {
+    "engines": {
+      "doubao": {
+        "label": "Doubao · ByteDance LiveInterpret 2.0",
+        "hint": "Voice cloning supported; 8 languages around a Chinese/English hub."
+      },
+      "qwen": {
+        "label": "Qwen · Alibaba Qwen3.8-LiveTranslate-Flash",
+        "hint": "Auto-detects the source language; voice cloning and 29 spoken output languages; 24 kHz TTS output."
+      },
+      "gemini": {
+        "label": "Google Gemini · Live Translate",
+        "hint": "Auto-detects the source language and keeps the speaker's voice; 70+ languages. Needs access to Google (uses the system proxy)."
+      },
+      "openai": {
+        "label": "OpenAI · gpt-realtime-translate",
+        "hint": "Continuous interpretation; auto-detects the source language and the translated voice follows the speaker. Needs access to OpenAI (uses the system proxy)."
+      }
+    },
+    "defaultHint": "Real-time translation service",
+    "ready": "Ready",
+    "needsKey": "API key not configured",
+    "engineLabel": "Translation service",
+    "engineHint": "Stop any active translation before switching.",
+    "switchFailed": "Switch failed: {{message}}\n\nStop the active translation first, then switch.",
+    "doubao": {
+      "label": "Doubao API keys",
+      "savedHint": "App Key and Access Key are encrypted and stored on this device.",
+      "obtainHint": "Find App Key and Access Key in Volcano Engine console under \"Speech → LiveInterpret 2.0\".",
+      "appKeyDisplay": "App Key ••••••••{{tail}}",
+      "change": "Replace",
+      "clear": "Clear"
+    },
+    "qwen": {
+      "label": "Qwen API key",
+      "savedHint": "DashScope API key is encrypted and stored on this device.",
+      "obtainHint": "Generate one in the Alibaba Bailian console (Beijing region) under \"API-KEY\" — starts with sk-. Find the workspace ID under \"Workspace management\"; with it set, the recommended workspace-dedicated host is used.",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "sk-...",
+      "workspacePlaceholder": "Workspace ID (optional, e.g. llm-xxx)",
+      "workspaceDisplay": "workspace {{id}}",
+      "change": "Replace",
+      "clear": "Clear"
+    },
+    "gemini": {
+      "label": "Gemini API key",
+      "savedHint": "Gemini API key is encrypted and stored on this device.",
+      "obtainHint": "Generate one in Google AI Studio under \"Get API key\" — starts with AIza.",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "AIza...",
+      "change": "Replace",
+      "clear": "Clear"
+    },
+    "openai": {
+      "label": "OpenAI API key",
+      "savedHint": "OpenAI API key is encrypted and stored on this device.",
+      "obtainHint": "Generate one on the OpenAI Platform under \"API keys\" — starts with sk-. Billed per audio minute (about $0.034/min).",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "sk-...",
+      "change": "Replace",
+      "clear": "Clear"
+    },
+    "busy": "Translation is running. Stop it to switch services.",
+    "clearConfirm": {
+      "title": "Clear the {{engine}} key?",
+      "description": "You'll need to enter it again before translating with this service."
+    }
+  },
+  "hotkey": {
+    "startStop": {
+      "label": "Start / stop translation",
+      "hint": "Press to start, press again or hit Esc to stop.",
+      "edit": "Change"
+    },
+    "stopCancel": {
+      "label": "Stop / cancel",
+      "hint": "Esc terminates the current operation at any time (not configurable)."
+    },
+    "subtitle": {
+      "label": "Show / hide subtitle window",
+      "hint": "Toggle the floating subtitle window.",
+      "edit": "Change",
+      "notImplemented": "Not yet customizable"
+    },
+    "capture": {
+      "title": "Record a new hotkey",
+      "instruction": "Press the combination you want to use. Press it once to start translating, then press it again to stop.",
+      "preview": "Waiting for input…",
+      "supportedHint": "Supports modifier + letter / digit / F1-F20 / arrows / Space / Tab. Esc cancels.",
+      "errors": {
+        "unsupportedKey": "That key combo isn't supported — try a more common one.",
+        "empty": "Press a key combination first.",
+        "registerFailed": "Couldn't register: {{message}}"
+      },
+      "save": "Save",
+      "cancel": "Cancel",
+      "reset": "Reset to default ({{accelerator}})"
+    }
+  },
+  "subtitle": {
+    "preview": {
+      "historySrc": "他偷走了那些馅饼",
+      "historyTgt": "He stole those tarts.",
+      "sampleSrc": "看来我们在时间线上达成了一致。让我们推进集成方案吧。",
+      "sampleTgt": "It seems we're aligned on the timeline. Let's move forward with the integration plan.",
+      "earlierSrc": "我们先从发布时间表说起。",
+      "earlierTgt": "Let's start with the launch timeline.",
+      "speakSrc": "I think the second week of December is safer.",
+      "speakTgt": "我觉得十二月第二周比较稳妥。"
+    },
+    "layout": {
+      "label": "Two-way layout",
+      "hint": "When you and the other side are both on: a timeline interleaves who said what in order, which reads best in long meetings; side by side gives each a column.",
+      "options": {
+        "timeline": "Timeline (recommended)",
+        "split": "Side by side"
+      }
+    },
+    "background": {
+      "label": "Background style",
+      "hint": "Use \"Frosted glass\" for screen sharing; pick \"Transparent\" to overlay the screen.",
+      "options": {
+        "glass": "Frosted glass",
+        "solid": "Solid panel",
+        "transparent": "Fully transparent (text only)"
+      }
+    },
+    "opacity": {
+      "label": "Background opacity",
+      "hintEnabled": "0% fully transparent, 100% opaque.",
+      "hintDisabled": "Not applied in fully transparent mode."
+    },
+    "fontSize": {
+      "label": "Translation font size",
+      "hint": "24–32 px recommended."
+    },
+    "liveLines": {
+      "label": "Live caption lines",
+      "hint": "How many lines the sentence being spoken normally takes. Longer ones grow upward over the history until they're finished.",
+      "option_one": "{{count}} line",
+      "option_other": "{{count}} lines"
+    },
+    "source": {
+      "label": "Show source",
+      "hint": "Turn off to read translations only — easier to skim in long meetings. You can also switch it from the subtitle window."
+    },
+    "history": {
+      "label": "Keep history in subtitles",
+      "hint": "Show the last few translated lines.",
+      "limitLabel": "History length",
+      "limitOption": "Last {{count}}"
+    },
+    "groups": {
+      "style": "Style",
+      "content": "Content"
+    }
+  },
+  "appearance": {
+    "themeLabel": "Theme",
+    "themeHint": "Affects both the main panel and the floating subtitles.",
+    "options": {
+      "system": {
+        "label": "Match system",
+        "hint": "Follow the macOS light / dark setting."
+      },
+      "light": {
+        "label": "Light",
+        "hint": "Warm background, dark text."
+      },
+      "dark": {
+        "label": "Dark",
+        "hint": "Dark background, light text."
+      }
+    }
+  },
+  "advanced": {
+    "rerunOnboarding": {
+      "label": "Re-run setup wizard",
+      "hint": "Walk through first-launch onboarding again.",
+      "cta": "Re-run wizard"
+    }
+  },
+  "corpus": {
+    "tabs": {
+      "glossary": "Glossary",
+      "hotWords": "Hot words",
+      "correctWords": "Replacements"
+    },
+    "glossary": {
+      "hint": "Source → target mapping. Guides the model to translate proper nouns your way. e.g. 人工智能 → Machine Learning.",
+      "sourcePlaceholder": "Source",
+      "targetPlaceholder": "Translation",
+      "empty": "No glossary entries.",
+      "add": "Add term"
+    },
+    "hotWords": {
+      "hint": "Mark source-language words that are likely to appear; improves recognition accuracy.",
+      "placeholder": "Hot word",
+      "empty": "No hot words.",
+      "add": "Add hot word"
+    },
+    "correctWords": {
+      "hint": "Find / replace applied to the source and translation. e.g. 接受 → 接收.",
+      "findPlaceholder": "Find",
+      "replacePlaceholder": "Replace with",
+      "empty": "No replacement rules.",
+      "add": "Add replacement"
+    },
+    "remove": "Remove",
+    "saved": "Saved",
+    "tooMany": "Over the {{max}}-entry limit. Remove some to save.",
+    "engineUnsupported": "Vocabulary only applies to Doubao. You are using {{engine}}; it takes effect once you switch to Doubao.",
+    "goToTranslation": "Go to Translation service",
+    "usage": "{{total}} / {{max}}",
+    "saving": "Saving…"
+  },
+  "pricing": {
+    "intro": "Costs are estimates: usage comes from what providers report (Gemini is derived from audio duration), and your provider's bill is what counts. Blank fields are not priced.",
+    "official": "List price · {{date}}",
+    "custom": "Custom",
+    "unpriced": "Unpriced",
+    "currency": "Currency",
+    "currencies": {
+      "CNY": "CNY ¥",
+      "USD": "USD $"
+    },
+    "fields": {
+      "inputAudio": "Audio in",
+      "inputText": "Text in",
+      "cachedInput": "Cached in",
+      "outputText": "Text out",
+      "outputAudio": "Audio out",
+      "perAudioMinute": "Audio time"
+    },
+    "perMillion": "per 1M tokens",
+    "perMinute": "per minute",
+    "blank": "Not priced",
+    "save": "Save",
+    "reset": "Restore list price",
+    "invalid": "Prices must be numbers of 0 or more",
+    "source": "Source: {{host}}",
+    "notes": {
+      "doubao": "Simultaneous Interpretation 2.0, pay-as-you-go list price; audio and text input cost the same. Resource packs bring it down to ¥40–56 per 1M; new accounts get 1M free tokens.",
+      "qwen": "Beijing region list price. Text input has no listed price and counts as free; other regions (e.g. Singapore) differ.",
+      "gemini": "Standard tier. Billed on audio only, about 25 tokens per second, derived from the audio actually sent and received.",
+      "openai": "Billed per minute of audio streamed: $0.034/min for translation plus $0.017/min for the source transcript."
+    },
+    "inUse": "In use"
+  },
+  "general": {
+    "groups": {
+      "hotkeys": "Shortcuts",
+      "setup": "Other"
+    }
+  }
+}

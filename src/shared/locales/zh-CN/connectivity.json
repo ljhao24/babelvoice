@@ -1,0 +1,8 @@
+{
+  "fallbackError": "连接失败",
+  "missingDoubaoKey": "未配置豆包密钥",
+  "missingQwenKey": "未配置通义千问密钥",
+  "missingGeminiKey": "未配置 Gemini 密钥",
+  "missingOpenAiKey": "未配置 OpenAI 密钥",
+  "connectTimeout": "连接超时，请检查网络后重试"
+}

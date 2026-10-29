@@ -1,0 +1,284 @@
+{
+  "header": {
+    "eyebrow": "设置"
+  },
+  "sections": {
+    "translation": "翻译服务",
+    "corpus": "词库",
+    "pricing": "费用估算",
+    "appearance": "外观",
+    "subtitle": "字幕",
+    "general": "通用"
+  },
+  "hints": {
+    "translation": "选择实时翻译服务并填写它的 API 密钥。会话语言和翻译声音在会议页选择。",
+    "corpus": "用术语、热词和替换规则，让专有名词识别更准、译法一致。目前只对豆包生效。",
+    "appearance": "界面主题与语言。",
+    "subtitle": "悬浮字幕窗的布局、背景、字号与内容。",
+    "pricing": "会议监视按这些单价估算每场费用。默认是官方原价，可改成你的合同价，只保存在本机。",
+    "general": "快捷键与配置向导。"
+  },
+  "language": {
+    "label": "界面语言",
+    "hint": "默认跟随系统语言。",
+    "options": {
+      "zh-CN": "简体中文",
+      "en": "English"
+    },
+    "sectionTitle": "语言 / Language"
+  },
+  "translation": {
+    "engines": {
+      "doubao": {
+        "label": "豆包 · 字节跳动 LiveInterpret 2.0",
+        "hint": "支持声音复刻；中英为中心的 8 语种互译。"
+      },
+      "qwen": {
+        "label": "通义千问 · 阿里 Qwen3.8-LiveTranslate-Flash",
+        "hint": "自动识别源语言，支持声音复刻与 29 种语音输出语种；24kHz TTS 输出。"
+      },
+      "gemini": {
+        "label": "Google Gemini · Live Translate",
+        "hint": "自动识别源语言，保留说话人音色，70+ 语种；需能访问 Google（自动走系统代理）。"
+      },
+      "openai": {
+        "label": "OpenAI · gpt-realtime-translate",
+        "hint": "连续同传，自动识别源语言，译音跟随说话人音色；需能访问 OpenAI（自动走系统代理）。"
+      }
+    },
+    "defaultHint": "实时翻译服务",
+    "ready": "已就绪",
+    "needsKey": "未配置 API 密钥",
+    "engineLabel": "翻译服务",
+    "engineHint": "切换前请先停止当前翻译。",
+    "switchFailed": "切换失败：{{message}}\n\n请先停止当前翻译再切换。",
+    "doubao": {
+      "label": "豆包 API 密钥",
+      "savedHint": "App Key 与 Access Key 已加密保存到本机。",
+      "obtainHint": "在火山引擎控制台「语音技术 → LiveInterpret 2.0」获取。",
+      "appKeyDisplay": "App Key ••••••••{{tail}}",
+      "change": "更换",
+      "clear": "清除"
+    },
+    "qwen": {
+      "label": "通义千问 API 密钥",
+      "savedHint": "DashScope API Key 已加密保存到本机。",
+      "obtainHint": "在阿里云百炼控制台（北京地域）「API-KEY」页生成，以 sk- 开头。业务空间 ID 可在「业务空间管理」页查看，填写后走官方推荐的专属域名。",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "sk-...",
+      "workspacePlaceholder": "业务空间 ID（可选，如 llm-xxx）",
+      "workspaceDisplay": "业务空间 {{id}}",
+      "change": "更换",
+      "clear": "清除"
+    },
+    "gemini": {
+      "label": "Gemini API 密钥",
+      "savedHint": "Gemini API Key 已加密保存到本机。",
+      "obtainHint": "在 Google AI Studio「Get API key」页生成，以 AIza 开头。",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "AIza...",
+      "change": "更换",
+      "clear": "清除"
+    },
+    "openai": {
+      "label": "OpenAI API 密钥",
+      "savedHint": "OpenAI API Key 已加密保存到本机。",
+      "obtainHint": "在 OpenAI Platform「API keys」页生成，以 sk- 开头；按音频时长计费（约 $0.034/分钟）。",
+      "keyDisplay": "••••••••{{tail}}",
+      "keyPlaceholder": "sk-...",
+      "change": "更换",
+      "clear": "清除"
+    },
+    "busy": "翻译进行中，停止后才能切换服务。",
+    "clearConfirm": {
+      "title": "清除{{engine}}的密钥？",
+      "description": "清除后，用这个服务翻译前需要重新填写。"
+    }
+  },
+  "hotkey": {
+    "startStop": {
+      "label": "开始 / 停止翻译",
+      "hint": "按一次开始，再按一次或 Esc 停止。",
+      "edit": "修改"
+    },
+    "stopCancel": {
+      "label": "停止 / 取消",
+      "hint": "Esc 可随时终止当前操作（不可修改）。"
+    },
+    "subtitle": {
+      "label": "显示 / 隐藏字幕窗",
+      "hint": "切换悬浮字幕窗的显示状态。",
+      "edit": "修改",
+      "notImplemented": "暂未支持自定义"
+    },
+    "capture": {
+      "title": "录制新快捷键",
+      "instruction": "按下想要使用的组合键。之后按一次开始翻译，再按一次停止翻译。",
+      "preview": "等待按键…",
+      "supportedHint": "支持「修饰键 + 字母 / 数字 / F1-F20 / 方向键 / Space / Tab 等」。Esc 取消。",
+      "errors": {
+        "unsupportedKey": "暂不支持这个按键，换一个常见组合再试。",
+        "empty": "请按下一个组合键。",
+        "registerFailed": "无法注册：{{message}}"
+      },
+      "save": "保存",
+      "cancel": "取消",
+      "reset": "恢复默认（{{accelerator}}）"
+    }
+  },
+  "subtitle": {
+    "preview": {
+      "historySrc": "he stole those tarts",
+      "historyTgt": "偷走了那些馅饼。",
+      "sampleSrc": "It seems we're aligned on the timeline. Let's move forward with the integration plan.",
+      "sampleTgt": "看来我们在时间线上达成了一致。让我们推进集成方案吧。",
+      "earlierSrc": "Let's start with the launch timeline.",
+      "earlierTgt": "我们先从发布时间表说起。",
+      "speakSrc": "我觉得十二月第二周比较稳妥。",
+      "speakTgt": "I think the second week of December is safer."
+    },
+    "layout": {
+      "label": "双向字幕布局",
+      "hint": "你说和对方说同时开启时：时间线按说话先后交错显示，适合长对话；并排则各占一栏。",
+      "options": {
+        "timeline": "时间线（推荐）",
+        "split": "左右并排"
+      }
+    },
+    "background": {
+      "label": "背景样式",
+      "hint": "投屏分享时建议使用「玻璃磨砂」；需要悬浮显示时使用「完全透明」。",
+      "options": {
+        "glass": "玻璃磨砂",
+        "solid": "纯色面板",
+        "transparent": "完全透明（仅文字）"
+      }
+    },
+    "opacity": {
+      "label": "背景透明度",
+      "hintEnabled": "0% 完全透明，100% 不透明。",
+      "hintDisabled": "「完全透明」模式下不生效。"
+    },
+    "fontSize": {
+      "label": "译文字号",
+      "hint": "推荐 24 – 32 px。"
+    },
+    "liveLines": {
+      "label": "实时字幕行数",
+      "hint": "正在说的句子平时占几行；说得更长时会向上展开、暂时压缩历史，说完即恢复。",
+      "option": "{{count}} 行"
+    },
+    "source": {
+      "label": "显示原文",
+      "hint": "关闭后只看译文，长会议里更好扫读。也可在字幕窗右上角随时切换。"
+    },
+    "history": {
+      "label": "保留历史字幕",
+      "hint": "在字幕窗中保留最近几条对话。",
+      "limitLabel": "历史条数",
+      "limitOption": "最近 {{count}} 条"
+    },
+    "groups": {
+      "style": "样式",
+      "content": "内容"
+    }
+  },
+  "appearance": {
+    "themeLabel": "主题",
+    "themeHint": "同时影响主面板与悬浮字幕窗。",
+    "options": {
+      "system": {
+        "label": "跟随系统",
+        "hint": "根据 macOS 浅色 / 深色设置自动切换。"
+      },
+      "light": {
+        "label": "浅色",
+        "hint": "暖色背景、深色文字。"
+      },
+      "dark": {
+        "label": "深色",
+        "hint": "深色背景、浅色文字。"
+      }
+    }
+  },
+  "advanced": {
+    "rerunOnboarding": {
+      "label": "重新运行配置向导",
+      "hint": "再次完成首次启动时的引导流程。",
+      "cta": "重新引导"
+    }
+  },
+  "corpus": {
+    "tabs": {
+      "glossary": "术语",
+      "hotWords": "热词",
+      "correctWords": "替换词"
+    },
+    "glossary": {
+      "hint": "原文 → 译文映射，引导模型按指定写法翻译专有名词。例：人工智能 → Machine Learning。",
+      "sourcePlaceholder": "原文",
+      "targetPlaceholder": "译文",
+      "empty": "尚无术语。",
+      "add": "添加术语"
+    },
+    "hotWords": {
+      "hint": "标记可能出现的原文热词，提升识别准确率。",
+      "placeholder": "热词",
+      "empty": "尚无热词。",
+      "add": "添加热词"
+    },
+    "correctWords": {
+      "hint": "对原文 / 译文做查找替换。例：接受 → 接收。",
+      "findPlaceholder": "查找",
+      "replacePlaceholder": "替换为",
+      "empty": "尚无替换规则。",
+      "add": "添加替换"
+    },
+    "remove": "删除",
+    "saved": "已保存",
+    "tooMany": "超过 {{max}} 条上限，删掉一些后才会保存。",
+    "engineUnsupported": "词库只对豆包生效。当前使用的是{{engine}}，切换到豆包后生效。",
+    "goToTranslation": "前往翻译服务",
+    "usage": "{{total}} / {{max}} 条",
+    "saving": "保存中…"
+  },
+  "pricing": {
+    "intro": "金额只是估算：用量来自服务商的上报（Gemini 按音频时长换算），实际以服务商账单为准。留空的项不计价。",
+    "official": "官方价 · {{date}}",
+    "custom": "自定义",
+    "unpriced": "未定价",
+    "currency": "币种",
+    "currencies": {
+      "CNY": "人民币 ¥",
+      "USD": "美元 $"
+    },
+    "fields": {
+      "inputAudio": "输入音频",
+      "inputText": "输入文本",
+      "cachedInput": "缓存输入",
+      "outputText": "输出文本",
+      "outputAudio": "输出音频",
+      "perAudioMinute": "音频时长"
+    },
+    "perMillion": "每百万 token",
+    "perMinute": "每分钟",
+    "blank": "不计价",
+    "save": "保存",
+    "reset": "恢复官方价",
+    "invalid": "单价必须是不小于 0 的数字",
+    "source": "来源：{{host}}",
+    "notes": {
+      "doubao": "同声传译 2.0 后付费原价，输入音频与文本同价。购买资源包可降到每百万 40–56 元；新账号有 100 万 token 免费额度。",
+      "qwen": "华北2（北京）原价。官方未单列输入文本价格，按 0 计；新加坡等地域价格不同。",
+      "gemini": "Standard 档。只按音频计费，每秒约 25 个 token，按实际收发的音频时长换算。",
+      "openai": "按推送的音频时长计费：翻译 $0.034/分钟，加源语言转写 $0.017/分钟。"
+    },
+    "inUse": "当前使用"
+  },
+  "general": {
+    "groups": {
+      "hotkeys": "快捷键",
+      "setup": "其他"
+    }
+  }
+}

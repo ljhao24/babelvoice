@@ -1,0 +1,21 @@
+{
+  "endMeetingFirst": "请先结束当前会议再测试连接",
+  "invalidWorkspaceId": "业务空间 ID 只能包含字母、数字和连字符（如 llm-xxx）",
+  "listenLoopback": "开启「播放对方的译音」需要先在首页「收听来源」中选择一个会议应用，否则播放出来的译音会被重新录入，形成回环。",
+  "pkgNotFound": "找不到打包的 BabelVoice 驱动（路径：{{path}}）。",
+  "windowsInstallTodo": "Windows 端将于 v2 提供",
+  "sameLanguagePair": "源语言和目标语言不能相同，请在首页重新选择语言。",
+  "sessionsStopping": "正在停止当前的翻译会话，请稍后再试。",
+  "sessionKind": {
+    "auth": "服务商拒绝了凭据，请检查 API Key 是否正确、是否已开通该服务。",
+    "quota": "服务商额度不足或请求过于频繁，请检查账户余额或稍后再试。",
+    "network": "无法连接到翻译服务，请检查网络或代理设置。",
+    "timeout": "翻译服务响应超时，请稍后重试；使用海外引擎时请确认代理可用。",
+    "protocol": "翻译服务拒绝了本次请求，可能是语言组合或参数不受支持。",
+    "server": "翻译服务暂时不可用，请稍后重试。",
+    "credentials-missing": "尚未配置当前引擎的凭据，请先在设置中填写。",
+    "audio-device": "音频设备出错，请检查麦克风或输出设备后重试。",
+    "unknown": "翻译会话意外中断，请重试。",
+    "withDetail": "{{text}}（{{detail}}）"
+  }
+}

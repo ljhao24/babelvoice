@@ -1,0 +1,14 @@
+node_modules/
+out/
+dist/
+build/
+resources/native/
+.DS_Store
+*.log
+.vscode/
+.idea/
+.claude/
+*.local
+.env
+.env.*
+!.env.example

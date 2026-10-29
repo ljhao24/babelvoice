@@ -1,0 +1,97 @@
+{
+  "intro": "BabelVoice carries sound between you and your meeting app: what you say is translated and sent into the meeting through a virtual microphone, and what's said in the meeting is translated into subtitles for you. When both routes say Ready, you're set.",
+  "ready": "Ready",
+  "pending_one": "{{count}} step left",
+  "pending_other": "{{count}} steps left",
+  "checking": "Checking…",
+  "guide": "Open Guide",
+  "flow": {
+    "translateTo": "To {{language}}",
+    "needsPermission": "Needs permission"
+  },
+  "speak": {
+    "title": "You speak → they hear the translation",
+    "flow": {
+      "mic": "Your microphone",
+      "micMissing": "Selected one not connected",
+      "virtualMic": "Virtual microphone",
+      "driver": {
+        "checking": "Checking…",
+        "missing": "Not installed",
+        "installing": "Installing…",
+        "not-loaded": "Not loaded",
+        "ready": "BabelVoice"
+      },
+      "meetingApp": "Meeting app",
+      "meetingAppDetail": "Mic set to BabelVoice"
+    },
+    "driver": {
+      "label": "BabelVoice virtual microphone",
+      "description": {
+        "checking": "macOS doesn't let apps pass sound to each other directly; your meeting app hears your translation through this.",
+        "missing": "macOS doesn't let apps pass sound to each other directly. Install it so your meeting app can use it as a microphone and hear your translation.",
+        "installing": "The installer is open. Follow its steps (it asks for this Mac's login password).",
+        "not-loaded": "The driver is installed but macOS hasn't loaded it yet. Restart your Mac.",
+        "ready": "Your meeting app can pick it as its microphone."
+      },
+      "install": "Install…",
+      "retry": "Install Again…",
+      "installing": "Installing…",
+      "installed": "Installed",
+      "notLoaded": "Not loaded",
+      "installFailed": "Couldn't open the installer: {{message}}",
+      "installFailedSimple": "Couldn't open the installer. Try again."
+    },
+    "micPermission": {
+      "label": "Microphone access",
+      "needed": "BabelVoice can't use the microphone yet, so it can't hear you.",
+      "denied": "Microphone access was denied. Turn on BabelVoice in System Settings › Privacy & Security › Microphone, then reopen BabelVoice.",
+      "allow": "Allow…"
+    },
+    "mic": {
+      "label": "Microphone",
+      "description": "What you say is picked up here.",
+      "missing": "The selected microphone isn't connected. Pick another one or plug it in.",
+      "systemDefault": "System default",
+      "systemDefaultNamed": "System default ({{name}})",
+      "disconnected": "Selected microphone (not connected)"
+    },
+    "meetingApp": {
+      "label": "Choose BabelVoice in your meeting app",
+      "description": "In the audio settings of Zoom, Tencent Meeting, Teams and others, set the microphone to BabelVoice so others hear your translation."
+    },
+    "verify": "To check they can hear you: test the microphone in your meeting app, start translating and say something — the level meter should move. Your translation only goes into the meeting; you won't hear it on this Mac."
+  },
+  "listen": {
+    "title": "They speak → you see subtitles",
+    "flow": {
+      "source": "Meeting sound",
+      "allAudio": "All system audio",
+      "subtitles": "Subtitles",
+      "subtitlesOnly": "Subtitles only",
+      "withVoice": "And spoken translation"
+    },
+    "permission": {
+      "label": "Screen & System Audio Recording",
+      "needed": "macOS puts listening to other apps under this permission. Without it, BabelVoice can't hear the meeting.",
+      "granted": "BabelVoice uses it to listen to your meeting app.",
+      "allowed": "Allowed",
+      "allow": "Allow…",
+      "openSettings": "Open System Settings…",
+      "restartHint": "After allowing it in System Settings, quit and reopen BabelVoice for it to take effect."
+    },
+    "output": {
+      "label": "Play translation on",
+      "description": "The translation of what others say plays here.",
+      "unused": "Used once “{{setting}}” is on in Meeting; for now you only get subtitles.",
+      "defaultIsVirtual": "Your system output is BabelVoice, so the translation would go into the meeting. Pick headphones or speakers.",
+      "systemDefault": "System default",
+      "systemDefaultNamed": "System default ({{name}})"
+    },
+    "footnote": "Which app to listen to, and whether to play the translation, is set on the Meeting page."
+  },
+  "virtualDeviceHintMac": "BabelVoice (click Install to set up the driver, then set BabelVoice as the mic in your meeting app)",
+  "virtualDeviceHintWindows": "VB-Cable (Windows setup arrives in v2)",
+  "screenCaptureResetHint": "No popup? The request may have been denied earlier. Run `tccutil reset ScreenCapture {{bundleId}}` in a terminal and relaunch, or grant it manually in System Settings.",
+  "deviceLabelMissing": "(device not authorized)"
+}

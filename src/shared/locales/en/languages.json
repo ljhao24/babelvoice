@@ -1,0 +1,48 @@
+{
+  "names": {
+    "zh": "Chinese",
+    "en": "English",
+    "ja": "Japanese",
+    "id": "Indonesian",
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "de": "German",
+    "fr": "French"
+  },
+  "voices": {
+    "doubao": {
+      "clone": {
+        "label": "Clone your voice (recommended)",
+        "hint": "Translation is spoken in a voice close to yours, so it sounds like you speaking a foreign language."
+      },
+      "femaleNatural": {
+        "label": "Female · natural & warm",
+        "hint": "Warm, clear female voice — works for any formal setting."
+      },
+      "maleNatural": {
+        "label": "Male · natural & expressive",
+        "hint": "An expressive male voice."
+      }
+    },
+    "qwen": {
+      "clone": { "label": "Clone the speaker's voice", "hint": "Clones each speaker's voice in real time; when listening it follows speaker changes, using the default voice until the clone is ready." },
+      "Tina": { "label": "Tina · female · warm", "hint": "Default voice; Mandarin + 28 other languages." },
+      "Serena": { "label": "Serena · female · gentle", "hint": "Mandarin + 28 other languages." },
+      "Maia": { "label": "Maia · female · poised", "hint": "Mandarin + 28 other languages." },
+      "Cindy": { "label": "Cindy · female · Taiwanese accent", "hint": "Taiwan-accented Chinese + 28 other languages." },
+      "Jennifer": { "label": "Jennifer · female · American English", "hint": "Cinematic American English voice; Mandarin + 28 other languages." },
+      "Ethan": { "label": "Ethan · male · bright", "hint": "Mandarin + 28 other languages." },
+      "Raymond": { "label": "Raymond · male · clear", "hint": "Mandarin + 28 other languages." },
+      "Andre": { "label": "Andre · male · steady", "hint": "Rich and steady; Mandarin + 28 other languages." },
+      "Harvey": { "label": "Harvey · male · deep", "hint": "Deep and gentle; Mandarin + 28 other languages." },
+      "Aiden": { "label": "Aiden · male · American English", "hint": "All-American young man; Mandarin + 28 other languages." }
+    }
+  },
+  "engineNames": {
+    "doubao": "Doubao",
+    "qwen": "Qwen",
+    "gemini": "Gemini",
+    "openai": "OpenAI",
+    "mock": "Mock engine (offline)"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "placeholder": {
+    "listening": "Listening…",
+    "idle": "Inactive",
+    "waiting": "Waiting for translation to start…"
+  },
+  "closeAria": "Close subtitles",
+  "closeTitle": "Close subtitle window",
+  "who": {
+    "listen": "Them",
+    "speak": "You",
+    "listenSpeaker": "Speaker {{n}}"
+  },
+  "langPair": "{{from}} → {{to}}",
+  "source": {
+    "show": "Show source",
+    "hide": "Hide source"
+  },
+  "newLines_one": "{{count}} new line",
+  "newLines_other": "{{count}} new lines"
+}

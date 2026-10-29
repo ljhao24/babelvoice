@@ -1,0 +1,25 @@
+{
+  "ariaLabel": "Quick settings",
+  "prefix": {
+    "mine": "You speak",
+    "other": "They speak",
+    "voice": "Voice"
+  },
+  "pendingPlaceholder": "Pick one…",
+  "source": {
+    "prefix": "Listen to",
+    "allAudio": "All system audio",
+    "missing": "{{bundleId}} (not running)"
+  },
+  "playTts": {
+    "label": "Play their translation",
+    "hint": "Plays the translation of the other side's speech on this Mac, through the device picked in Audio routing (system default output by default). Pauses while “Translate what you say” runs and resumes at the next sentence.",
+    "needsSource": "Pick an app under “Listen to” first. When listening to all system audio, the played translation would be captured again and loop."
+  },
+  "micPassthrough": {
+    "ariaLabel": "Mic passthrough when idle",
+    "hint": "During a meeting, while “Translate what you say” isn't running, route raw mic audio straight into the virtual device so a fluent attendee can be heard without changing the meeting app's input device. Steps aside automatically once it starts, and releases the mic when the meeting ends.",
+    "off": "Mic passthrough when idle",
+    "on": "Mic passthrough on"
+  }
+}

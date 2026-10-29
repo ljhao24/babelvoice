@@ -1,0 +1,21 @@
+{
+  "endMeetingFirst": "End the current meeting before testing the connection",
+  "invalidWorkspaceId": "Workspace ID may only contain letters, digits and hyphens (e.g. llm-xxx)",
+  "listenLoopback": "“Play their translation” needs an app selected under “Listen to” on the home screen. Otherwise the played translation would be captured again and loop.",
+  "pkgNotFound": "BabelVoice driver package not found (path: {{path}}).",
+  "windowsInstallTodo": "Windows setup arrives in v2",
+  "sameLanguagePair": "Source and target language must differ. Pick the languages again on the home screen.",
+  "sessionsStopping": "Translation sessions are stopping. Try again in a moment.",
+  "sessionKind": {
+    "auth": "The provider rejected the credentials. Check that the API key is correct and the service is enabled.",
+    "quota": "Out of provider quota, or too many requests. Check your account balance or try again later.",
+    "network": "Can't reach the translation service. Check your network or proxy settings.",
+    "timeout": "The translation service didn't respond in time. Try again; for overseas engines, check that your proxy works.",
+    "protocol": "The translation service refused the request. The language pair or settings may not be supported.",
+    "server": "The translation service is temporarily unavailable. Try again later.",
+    "credentials-missing": "No credentials are set up for this engine yet. Add them in Settings.",
+    "audio-device": "An audio device failed. Check your microphone or output device and try again.",
+    "unknown": "The translation session stopped unexpectedly. Try again.",
+    "withDetail": "{{text}} ({{detail}})"
+  }
+}

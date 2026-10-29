@@ -1,0 +1,13 @@
+{
+  "brandSubtitle": "v0.2 · macOS",
+  "groups": {
+    "translation": "Translation",
+    "config": "Configuration"
+  },
+  "items": {
+    "control": "Meeting",
+    "transcript": "History",
+    "audio": "Audio routing",
+    "settings": "Settings"
+  }
+}

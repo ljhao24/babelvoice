@@ -1,0 +1,25 @@
+{
+  "ok": "OK",
+  "cancel": "Cancel",
+  "clear": "Clear",
+  "close": "Close",
+  "retry": "Retry",
+  "loading": "Loading…",
+  "failed": "Failed",
+  "success": "Success",
+  "save": "Save",
+  "saving": "Saving…",
+  "saved": "Saved",
+  "yes": "Yes",
+  "no": "No",
+  "meetingTitleSuffix": " Meeting",
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "desc": "This page hit an unexpected error. Reloading recovers it; running translation sessions are not affected.",
+    "reload": "Reload"
+  },
+  "tray": {
+    "openControlPanel": "Open Control Panel",
+    "quit": "Quit BabelVoice"
+  }
+}

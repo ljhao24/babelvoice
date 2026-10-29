@@ -1,0 +1,58 @@
+name: Release
+
+# Pushing a tag like v0.2.0 builds, signs and notarizes the DMG and publishes
+# it as a GitHub release. See docs/RELEASE-macOS.md.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Check the tag matches package.json
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          if [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package.json version $version"
+            exit 1
+          fi
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+
+      - name: Build, sign and notarize
+        env:
+          CSC_LINK: ${{ secrets.MAC_CERT_P12_BASE64 }}
+          CSC_KEY_PASSWORD: ${{ secrets.MAC_CERT_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: L3BM5CRT8G
+        # forceCodeSigning: fail rather than ship an unsigned build. The
+        # release itself is created below, so electron-builder never publishes.
+        run: npm run build:mac -- --publish never -c.forceCodeSigning=true
+
+      # electron-builder skips notarization silently when the Apple secrets
+      # are missing; this is the check that catches it.
+      - name: Check the app is notarized
+        run: xcrun stapler validate dist/mac-arm64/BabelVoice.app
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          prerelease=""
+          case "$GITHUB_REF_NAME" in *-*) prerelease="--prerelease" ;; esac
+          gh release create "$GITHUB_REF_NAME" dist/*.dmg \
+            --title "BabelVoice ${GITHUB_REF_NAME#v}" \
+            --generate-notes $prerelease

@@ -1,0 +1,195 @@
+{
+  "credentialBanner": {
+    "engineNotConfigured": "{{engine}} 未配置 API 密钥，无法开始翻译。",
+    "goToSettings": "前往设置"
+  },
+  "active": {
+    "header": "会议进行中",
+    "headerStatus": "{{duration}} · {{count}} 句",
+    "endMeeting": "结束会议",
+    "showOverlay": "显示字幕浮窗",
+    "hideOverlay": "隐藏字幕浮窗",
+    "duration": {
+      "hourMinute": "{{h}} 小时 {{m}} 分",
+      "minuteSecond": "{{m}} 分 {{s}} 秒",
+      "second": "{{s}} 秒"
+    },
+    "section": {
+      "title": "实时翻译"
+    },
+    "live": "进行中",
+    "endConfirm": {
+      "title": "结束会议？",
+      "description": "正在进行的翻译会停止。对话已经保存，可以在「历史」里查看。"
+    }
+  },
+  "speak": {
+    "title": "翻译你说的话",
+    "chip": "你 → 对方",
+    "desc": "实时翻译你的语音，并送入会议",
+    "status": {
+      "starting": "启动中",
+      "running": "进行中",
+      "idle": "未开始",
+      "finishingPlayback": "播放剩余语音",
+      "stopping": "停止中"
+    },
+    "buttons": {
+      "cancelStart": "取消启动",
+      "finishPlayback": "正在播放剩余翻译…",
+      "stopping": "正在停止…",
+      "stop": "停止翻译",
+      "start": "开始翻译"
+    },
+    "hotkeyHint": "按一次开始翻译，再按一次停止",
+    "target": "送入会议",
+    "hotkeyLabel": "快捷键"
+  },
+  "listen": {
+    "title": "听懂对方在说什么",
+    "chip": "对方 → 你",
+    "desc": "把对方的话实时翻译为字幕显示",
+    "status": {
+      "starting": "启动中",
+      "running": "聆听中",
+      "idle": "未开始",
+      "finishingSubtitle": "收尾字幕",
+      "stopping": "停止中"
+    },
+    "buttons": {
+      "cancelStart": "取消启动",
+      "finishSubtitle": "正在收尾字幕…",
+      "stopping": "正在停止…",
+      "stop": "停止聆听",
+      "start": "开始聆听"
+    },
+    "permission": {
+      "granted": "已获得会议音频权限",
+      "checking": "正在检查权限…",
+      "needed": "需要屏幕录制权限以捕获会议音频",
+      "grantCta": "授权",
+      "label": "会议音频权限",
+      "grantedShort": "已授权"
+    },
+    "target": "显示为字幕"
+  },
+  "transcriptPanel": {
+    "title": "本场对话",
+    "lineCount": "{{count}} 条",
+    "empty": "开始翻译或聆听后，对话将显示在这里。",
+    "you": "你",
+    "other": "对方",
+    "otherSpeaker": "对方 {{n}}",
+    "olderHidden": "仅显示最近 {{count}} 条，完整内容见「历史」。",
+    "all": "全部",
+    "jumpToLatest": "回到最新"
+  },
+  "testPanel": {
+    "trigger": "测试翻译",
+    "hintActive": "测试进行中",
+    "hintIdle": "运行一次完整测试",
+    "modal": {
+      "ariaLabel": "测试翻译流程",
+      "eyebrow": "开始前测试",
+      "title": "测试翻译流程",
+      "sub": "用当前设置完整跑一次翻译，确认麦克风、扬声器与字幕正常。"
+    },
+    "noKey": "请先在设置中填入 API 密钥。",
+    "speak": {
+      "starting": "启动中…",
+      "stopping": "停止中…",
+      "stop": "停止说话测试",
+      "start": "测试说话"
+    },
+    "listen": {
+      "starting": "启动中…",
+      "stopping": "停止中…",
+      "stop": "停止聆听测试",
+      "start": "测试聆听"
+    },
+    "helpSpeak": "对着麦克风说话，将「{{src}}」翻译为「{{tgt}}」并播放。",
+    "helpListen": "捕获系统音频，翻译为「{{src}}」字幕。下方为示例音频，可模拟对方说话。",
+    "audio": {
+      "title": "示例音频",
+      "statusActive": "正在聆听 · 点击播放即开始翻译",
+      "statusStarting": "聆听启动中…",
+      "statusIdle": "点击播放将自动开始聆听",
+      "empty": "示例音频准备中。",
+      "emptySub": "此处会列出几段不同语言的音频，点击即可触发翻译。",
+      "stop": "停止",
+      "play": "播放"
+    },
+    "clips": {
+      "faradayCandle": "英文 · 科学讲座",
+      "dickensEngland": "英文 · 历史叙述"
+    },
+    "errors": {
+      "listenStartFailed": "启动聆听失败：{{message}}",
+      "listenStartFailedSimple": "启动聆听失败",
+      "audioLoadFailed": "音频「{{label}}」加载失败",
+      "playFailed": "播放失败：{{message}}",
+      "playFailedSimple": "播放失败"
+    },
+    "footer": {
+      "hintRunning": "关闭面板后测试继续运行，按钮会显示状态。",
+      "hintIdle": "可随时重新打开。",
+      "close": "关闭"
+    }
+  },
+  "monitor": {
+    "title": "会议监视",
+    "summaryTitle": "本场用量与费用",
+    "costLabel": "预估费用",
+    "costNone": "未定价",
+    "costIncomplete": "部分用量未定价，金额偏低",
+    "empty": "开始翻译或聆听后，这里会显示连接状态和用量。",
+    "links": "连接",
+    "usage": "用量",
+    "state": {
+      "idle": "已结束",
+      "connecting": "连接中",
+      "live": "已连接",
+      "reconnecting": "重连中",
+      "finishing": "收尾中",
+      "failed": "已断开"
+    },
+    "rtt": "延迟 {{ms}} ms",
+    "handshake": "握手 {{ms}} ms",
+    "ready": "就绪 {{ms}} ms",
+    "lastRx": "最后数据 {{age}}前",
+    "reconnects": "重连 {{count}} 次",
+    "failures": "失败 {{count}} 次",
+    "audioIn": "上行音频 {{duration}}",
+    "audioOut": "回传语音 {{duration}}",
+    "tokens": {
+      "inputAudio": "输入音频",
+      "inputText": "输入文本",
+      "cachedInput": "缓存输入",
+      "outputText": "输出文本",
+      "outputAudio": "输出音频"
+    },
+    "estimated": "估算",
+    "estimatedHint": "按音频时长换算的 token，服务商未直接报告",
+    "footnote": "金额按单价估算，以服务商账单为准。",
+    "editPrices": "调整单价",
+    "seconds": "{{n}} 秒",
+    "minutes": "{{n}} 分钟",
+    "details": "连接与用量详情"
+  },
+  "idle": {
+    "title": "开始一场会议",
+    "description": "同时翻译你说的和对方说的，对话全程自动保存。",
+    "start": "开始会议",
+    "groups": {
+      "language": "语言",
+      "audio": "音频"
+    },
+    "swap": "互换双方语言",
+    "voiceHint": "对方听到的译文用这个声音播出。",
+    "sourceHint": "只收听这个应用的声音，避免把别的声音也翻译进去。",
+    "recent": "最近的会议",
+    "viewAll": "查看全部",
+    "recentMeta": "{{day}} {{time}} · {{length}} · {{count}} 句",
+    "voice": "翻译声音"
+  }
+}

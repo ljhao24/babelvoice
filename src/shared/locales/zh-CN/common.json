@@ -1,0 +1,25 @@
+{
+  "ok": "确定",
+  "cancel": "取消",
+  "clear": "清除",
+  "close": "关闭",
+  "retry": "重试",
+  "loading": "加载中…",
+  "failed": "失败",
+  "success": "成功",
+  "save": "保存",
+  "saving": "保存中…",
+  "saved": "已保存",
+  "yes": "是",
+  "no": "否",
+  "meetingTitleSuffix": " 会议",
+  "errorBoundary": {
+    "title": "界面出错了",
+    "desc": "页面遇到意外错误。重新加载即可恢复，进行中的翻译会话不受影响。",
+    "reload": "重新加载"
+  },
+  "tray": {
+    "openControlPanel": "打开控制面板",
+    "quit": "退出 BabelVoice"
+  }
+}

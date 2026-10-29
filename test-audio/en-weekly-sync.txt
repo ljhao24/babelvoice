@@ -1,0 +1,8 @@
+Maya: Okay, I think everyone's here. Let's get started. So, quick update on the mobile release first.
+Daniel: Sure. Um, we pushed the beta to about 300 testers on Monday. The crash rate is down to 0.4 percent, which is the lowest we've had so far.
+Maya: Nice. And what about the login issue people were reporting last week?
+Daniel: That one's fixed. It turned out the session token was expiring after 15 minutes instead of 24 hours. We shipped a patch on Tuesday night.
+Maya: Great. Then the main thing I want to decide today is whether we move the launch to November 12th, or keep the original date.
+Daniel: Honestly, I'd keep the original date. The remaining bugs are minor, and marketing has already booked the press briefing.
+Maya: Okay, let's keep it. But I want a go or no-go check next Thursday. Can you send me the open bug list by Wednesday?
+Daniel: Yep, I'll have it to you by end of day Wednesday.
