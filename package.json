@@ -1,6 +1,6 @@
 {
   "name": "babelvoice",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BabelVoice — AI real-time meeting translator (Electron + TypeScript + React)",
   "license": "GPL-3.0-only",
   "repository": "github:ljhao24/babelvoice",
