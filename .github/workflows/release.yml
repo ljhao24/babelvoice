@@ -18,6 +18,11 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      # node-gyp 9 (via electron-builder 25) imports distutils, which
+      # Python 3.12 dropped; it builds better-sqlite3 and the native bridge.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Check the tag matches package.json
         run: |
