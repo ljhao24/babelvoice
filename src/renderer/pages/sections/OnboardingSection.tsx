@@ -18,7 +18,7 @@
  */
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { WaveIcon } from '../../components/Icons.js';
+import appIconUrl from '../../assets/app-icon.svg';
 import { usePreferences } from '../../hooks/usePreferences.js';
 import { Crumb } from './onboarding/Crumb.js';
 import { Step1Driver } from './onboarding/steps/Step1Driver.js';
@@ -91,19 +91,13 @@ export function OnboardingSection({ onFinish }: Props): React.JSX.Element {
           gap: 16
         }}
       >
-        <div
-          className="brand-mark"
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 12,
-            background:
-              'linear-gradient(135deg, rgb(var(--brand)), rgb(var(--accent-warm)))',
-            color: 'rgb(var(--brand-fg))'
-          }}
-        >
-          <WaveIcon size={18} />
-        </div>
+        <img
+          src={appIconUrl}
+          alt=""
+          width={40}
+          height={40}
+          style={{ flexShrink: 0 }}
+        />
         <div>
           <div
             style={{

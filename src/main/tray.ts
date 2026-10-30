@@ -6,21 +6,16 @@ import { subscribeLocale, t } from './i18n.js';
 
 let tray: Tray | null = null;
 
-/** Menu-bar icon height on macOS. */
-const TRAY_ICON_SIZE = 18;
-
 const findIcon = (): Electron.NativeImage => {
-  // A dedicated (template) tray icon wins if one ships; otherwise scale the
-  // app icon down. An empty image would leave an invisible, unclickable
-  // menu-bar item.
-  const dedicated = join(process.resourcesPath, 'tray-icon.png');
-  if (existsSync(dedicated)) return nativeImage.createFromPath(dedicated);
-  const appIcon = nativeImage.createFromPath(
-    join(app.getAppPath(), 'resources', 'icons', 'icon.png')
+  // A template image: the "Template" suffix lets macOS tint it for light and
+  // dark menu bars, and trayTemplate@2x.png loads alongside it. Packaged
+  // builds ship it in Resources (extraResources); dev reads the source tree.
+  const packaged = join(process.resourcesPath, 'trayTemplate.png');
+  return nativeImage.createFromPath(
+    existsSync(packaged)
+      ? packaged
+      : join(app.getAppPath(), 'resources', 'icons', 'trayTemplate.png')
   );
-  return appIcon.isEmpty()
-    ? appIcon
-    : appIcon.resize({ height: TRAY_ICON_SIZE, quality: 'best' });
 };
 
 const buildMenu = (): Menu =>
