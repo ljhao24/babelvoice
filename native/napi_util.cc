@@ -80,7 +80,12 @@ bool TtsSampleRateArg(napi_env env, const napi_value *args, size_t argc, size_t 
 
 uint64_t NowMs() {
   struct timespec ts;
+#ifdef _WIN32
+  // MSVC has no clock_gettime; timespec_get is the C11 equivalent.
+  timespec_get(&ts, TIME_UTC);
+#else
   clock_gettime(CLOCK_REALTIME, &ts);
+#endif
   return static_cast<uint64_t>(ts.tv_sec) * 1000u + static_cast<uint64_t>(ts.tv_nsec / 1000000);
 }
 

@@ -67,6 +67,7 @@ import {
 import { closeSocket, DEFAULT_WS_TIMING, type WsTiming } from './ws-transport.js';
 import { FinalPairing } from './final-pairing.js';
 import { GatedWsSession } from './gated-ws-session.js';
+import { doubaoAuthHeaders } from './doubao-credentials.js';
 import { LIVE_RECONNECT_BUDGET, ReconnectPolicy } from './reconnect-policy.js';
 import { Pcm16Carry } from './pcm.js';
 import { DoubaoUsageTracker } from './doubao-usage.js';
@@ -225,9 +226,7 @@ export class DoubaoClient implements TranslationClient {
     await this.session.open({
       url: this.endpoint,
       headers: {
-        'X-Api-App-Key': creds.appKey,
-        'X-Api-Access-Key': creds.accessKey,
-        'X-Api-Resource-Id': creds.resourceId,
+        ...doubaoAuthHeaders(creds),
         'X-Api-Connect-Id': this.connectId
       },
       // X-Tt-Logid comes back on the upgrade (or the rejection).

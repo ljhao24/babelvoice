@@ -17,6 +17,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "build:mac": "npm run build:native && electron-vite build && electron-builder --mac",
+    "build:win": "npm run build:native && electron-vite build && electron-builder --win --config electron-builder.win.yml",
     "start": "electron-vite preview"
   },
   "dependencies": {

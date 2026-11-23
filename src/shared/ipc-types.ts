@@ -62,6 +62,7 @@ export const IPC = {
  * (per-user keys).
  */
 export type SetCredentialsPayload =
+  | { engineId: 'doubao'; apiKey: string }
   | { engineId: 'doubao'; appKey: string; accessKey: string }
   | { engineId: 'qwen'; apiKey: string; workspaceId?: string }
   | { engineId: 'gemini'; apiKey: string }

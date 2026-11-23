@@ -54,9 +54,13 @@
     "switchFailed": "Switch failed: {{message}}\n\nStop the active translation first, then switch.",
     "doubao": {
       "label": "Doubao API keys",
-      "savedHint": "App Key and Access Key are encrypted and stored on this device.",
-      "obtainHint": "Find App Key and Access Key in Volcano Engine console under \"Speech → LiveInterpret 2.0\".",
+      "savedHint": "Your keys are encrypted and stored on this device.",
+      "obtainHint": "Enable \"Simultaneous Interpretation 2.0\" in the Volcano Engine Doubao Speech console. New console: copy an API Key from API Key management and fill in only the first field. Old console: copy the app's APP ID and Access Token into the other two fields.",
       "appKeyDisplay": "App Key ••••••••{{tail}}",
+      "apiKeyDisplay": "API Key ••••••••{{tail}}",
+      "keyPlaceholder": "New-console API Key (then leave the next two empty)",
+      "appKeyPlaceholder": "Old-console APP ID",
+      "accessKeyPlaceholder": "Old-console Access Token",
       "change": "Replace",
       "clear": "Clear"
     },

@@ -54,9 +54,13 @@
     "switchFailed": "切换失败：{{message}}\n\n请先停止当前翻译再切换。",
     "doubao": {
       "label": "豆包 API 密钥",
-      "savedHint": "App Key 与 Access Key 已加密保存到本机。",
-      "obtainHint": "在火山引擎控制台「语音技术 → LiveInterpret 2.0」获取。",
+      "savedHint": "密钥已加密保存到本机。",
+      "obtainHint": "在火山引擎「豆包语音」控制台开通「同声传译 2.0」。新版控制台：在「API Key 管理」复制 API Key，只填第一栏即可。旧版控制台：在应用详情里复制 APP ID 和 Access Token，填入后两栏。",
       "appKeyDisplay": "App Key ••••••••{{tail}}",
+      "apiKeyDisplay": "API Key ••••••••{{tail}}",
+      "keyPlaceholder": "新版控制台 API Key（填了就不用填下面两栏）",
+      "appKeyPlaceholder": "旧版控制台 APP ID",
+      "accessKeyPlaceholder": "旧版控制台 Access Token",
       "change": "更换",
       "clear": "清除"
     },

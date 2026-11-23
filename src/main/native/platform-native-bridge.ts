@@ -564,7 +564,7 @@ const createBridge = (): PlatformNativeBridge => {
     return (
       createWindowsBridge() ??
       new UnsupportedNativeBridge(
-        'Windows native bridge is not implemented yet'
+        'Windows native bridge is not built or could not be loaded'
       )
     );
   }

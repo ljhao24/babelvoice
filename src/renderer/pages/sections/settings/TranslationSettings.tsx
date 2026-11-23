@@ -166,7 +166,9 @@ function CredentialsGroup({
   if (configured && !editing) {
     const summary =
       engineId === 'doubao'
-        ? t('translation.doubao.appKeyDisplay', { tail: status.doubao.appKeyTail ?? '????' })
+        ? status.doubao.apiKeyTail
+          ? t('translation.doubao.apiKeyDisplay', { tail: status.doubao.apiKeyTail })
+          : t('translation.doubao.appKeyDisplay', { tail: status.doubao.appKeyTail ?? '????' })
         : t(`translation.${engineId}.keyDisplay`, {
             tail: status[engineId]?.apiKeyTail ?? '????'
           });
@@ -222,7 +224,7 @@ function CredentialsGroup({
       // Doubao's keys have no telltale prefix; a placeholder would only repeat the label.
       case 'appKey':
       case 'accessKey':
-        return { label, placeholder: '' };
+        return { label, placeholder: t(`translation.doubao.${name}Placeholder`) };
       case 'workspaceId':
         return { label, placeholder: t('translation.qwen.workspacePlaceholder') };
       case 'apiKey':

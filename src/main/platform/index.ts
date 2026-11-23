@@ -2,7 +2,7 @@
  * Platform dispatcher. Imports the macOS or Windows implementation
  * based on `process.platform` and re-exports a uniform API.
  *
- * v1: macOS only. Windows variant is stubbed with TODO(v2-windows).
+ * Windows uses WASAPI (native/win/) with VB-Cable as the virtual loopback.
  */
 import * as macos from './macos.js';
 import * as windows from './windows.js';

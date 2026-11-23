@@ -5,6 +5,7 @@ import { NextButton, StepShell } from '../StepShell.js';
 import { ThemedHeroVideo } from '../ThemedHeroVideo.js';
 import driverLightUrl from '../../../../assets/videos/onboarding-light.mp4';
 import driverDarkUrl from '../../../../assets/videos/onboarding-dark.mp4';
+import { platformKey, usePlatformInfo } from '../../../../hooks/usePlatformInfo.js';
 
 /** Step 1 — install the BabelVoice virtual driver and wait for it to come alive. */
 export function Step1Driver({
@@ -12,6 +13,7 @@ export function Step1Driver({
 }: {
   onAdvance: () => void;
 }): React.JSX.Element {
+  const platform = usePlatformInfo();
   const { t } = useTranslation('onboarding');
   const [installed, setInstalled] = useState<boolean | null>(null);
   const [virtualAlive, setVirtualAlive] = useState(false);
@@ -74,7 +76,7 @@ export function Step1Driver({
     <StepShell
       step={1}
       title={t('step1.title')}
-      desc={t('step1.desc')}
+      desc={t(platformKey(platform, 'step1.desc'))}
       visual={
         <ThemedHeroVideo
           light={driverLightUrl}
@@ -113,7 +115,7 @@ export function Step1Driver({
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 13.5, fontWeight: 700, color: 'rgb(var(--fg))' }}>
-            {t('step1.driverName')}
+            {t(platformKey(platform, 'step1.driverName'))}
           </div>
           <div
             style={{
@@ -126,12 +128,12 @@ export function Step1Driver({
             {installed === null
               ? t('step1.status.checking')
               : installing
-                ? t('step1.status.installing')
+                ? t(platformKey(platform, 'step1.status.installing'))
                 : error
                   ? error
                   : installed
                     ? virtualAlive
-                      ? t('step1.status.installedAlive')
+                      ? t(platformKey(platform, 'step1.status.installedAlive'))
                       : t('step1.status.installedWaiting')
                     : t('step1.status.notInstalled')}
           </div>
@@ -180,7 +182,7 @@ export function Step1Driver({
           }}
         >
           <CheckIcon size={14} />
-          {t('step1.doneBanner')}
+          {t(platformKey(platform, 'step1.doneBanner'))}
         </div>
       )}
     </StepShell>

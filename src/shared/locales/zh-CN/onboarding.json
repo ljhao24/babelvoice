@@ -1,4 +1,23 @@
 {
+  "win": {
+    "step1": {
+      "desc": "Windows 不允许应用之间直接传递音频，需要安装免费的虚拟声卡 VB-Cable 作为中转，会议软件才能接收 AI 翻译后的语音。点击「安装」会打开 VB-Audio 官网：下载压缩包并解压，右键 VBCABLE_Setup_x64.exe 选择「以管理员身份运行」，点 Install Driver。装好后这里会自动检测到。",
+      "driverName": "VB-Cable 虚拟声卡",
+      "status": {
+        "installing": "请在打开的网页下载 VB-Cable，并以管理员身份运行安装程序。安装完成后会自动检测（个别电脑需要重启）。",
+        "installedAlive": "已检测到 CABLE Input，可作为翻译语音的输出设备。"
+      },
+      "doneBanner": "已检测到 VB-Cable 虚拟声卡"
+    },
+    "step2": {
+      "desc": "麦克风权限用于翻译你的语音。Windows 采集会议音频不需要额外授权。",
+      "screen": {
+        "title": "系统音频（用于捕获会议音频）",
+        "desc": "Windows 无需额外授权。"
+      },
+      "tip": "若麦克风显示未授权，打开「设置 → 隐私和安全性 → 麦克风」，打开「麦克风访问权限」和<bold>「允许桌面应用访问麦克风」</bold>，再回到这里。"
+    }
+  },
   "header": {
     "title": "欢迎使用 BabelVoice",
     "sub": "约两分钟完成基础配置。",

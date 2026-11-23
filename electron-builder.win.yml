@@ -1,0 +1,40 @@
+appId: com.ljhao.babelvoice
+productName: BabelVoice
+directories:
+  output: dist
+# better-sqlite3 ships N-API prebuilds (prebuilds/win32-x64.node), so no
+# rebuild is needed — and rebuilding would require Visual Studio.
+npmRebuild: false
+files:
+  - out/**/*
+  - protos/**/*
+  - "!node_modules/better-sqlite3/{deps,src,build}/**"
+  - "!node_modules/better-sqlite3/prebuilds/{darwin-*,linux-*,linuxmusl-*,win32-arm64}.node"
+extraResources:
+  - from: protos
+    to: protos
+  # WASAPI audio bridge, built by scripts/build-native-audio.sh.
+  - from: resources/native/win32-x64
+    to: native/win32-x64
+    filter:
+      - "*.node"
+  # Tray icon (tray.ts).
+  - from: resources/icons/icon.ico
+    to: icon.ico
+  # Opened by the 「查看图文教程」 buttons (platform/windows.ts openSetupGuide).
+  - from: docs/SETUP-windows.md
+    to: docs/SETUP-windows.md
+electronLanguages: [en-US, zh-CN]
+win:
+  icon: resources/icons/icon.ico
+  target:
+    - target: nsis
+      arch: x64
+    - target: portable
+      arch: x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: ${productName}-Setup-${version}-x64.${ext}
+portable:
+  artifactName: ${productName}-${version}-x64-portable.${ext}

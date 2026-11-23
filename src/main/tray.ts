@@ -7,6 +7,14 @@ import { subscribeLocale, t } from './i18n.js';
 let tray: Tray | null = null;
 
 const findIcon = (): Electron.NativeImage => {
+  // The macOS template glyph is black-on-transparent and vanishes on a dark
+  // Windows taskbar; use the colour app icon there.
+  if (process.platform === 'win32') {
+    const icon = join(process.resourcesPath, 'icon.ico');
+    return nativeImage.createFromPath(
+      existsSync(icon) ? icon : join(app.getAppPath(), 'resources', 'icons', 'icon.ico')
+    );
+  }
   // A template image: the "Template" suffix lets macOS tint it for light and
   // dark menu bars, and trayTemplate@2x.png loads alongside it. Packaged
   // builds ship it in Resources (extraResources); dev reads the source tree.

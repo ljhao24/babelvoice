@@ -9,6 +9,7 @@ import { NextButton, StepShell } from '../StepShell.js';
 import { ThemedHeroVideo } from '../ThemedHeroVideo.js';
 import permissionsLightUrl from '../../../../assets/videos/permissions-light.mp4';
 import permissionsDarkUrl from '../../../../assets/videos/permissions-dark.mp4';
+import { platformKey, usePlatformInfo } from '../../../../hooks/usePlatformInfo.js';
 
 function PermissionRow({
   icon,
@@ -103,6 +104,7 @@ export function Step2Permissions({
   onAdvance: () => void;
 }): React.JSX.Element {
   const { t } = useTranslation('onboarding');
+  const platform = usePlatformInfo();
   const [perms, setPerms] = useState<NativePermissionSnapshot | null>(null);
   const [micBusy, setMicBusy] = useState(false);
   const [screenBusy, setScreenBusy] = useState(false);
@@ -161,7 +163,7 @@ export function Step2Permissions({
     <StepShell
       step={2}
       title={t('step2.title')}
-      desc={t('step2.desc')}
+      desc={t(platformKey(platform, 'step2.desc'))}
       visual={
         <ThemedHeroVideo
           light={permissionsLightUrl}
@@ -183,8 +185,8 @@ export function Step2Permissions({
         />
         <PermissionRow
           icon={<SpeakerIcon size={20} />}
-          title={t('step2.screen.title')}
-          desc={t('step2.screen.desc')}
+          title={t(platformKey(platform, 'step2.screen.title'))}
+          desc={t(platformKey(platform, 'step2.screen.desc'))}
           status={perms?.screen ?? 'unknown'}
           busy={screenBusy}
           hint={screenHint}
@@ -204,7 +206,7 @@ export function Step2Permissions({
           lineHeight: 1.55
         }}
       >
-        <Trans i18nKey="step2.tip" ns="onboarding" components={{ bold: <b /> }} />
+        <Trans i18nKey={platformKey(platform, 'step2.tip')} ns="onboarding" components={{ bold: <b /> }} />
       </div>
     </StepShell>
   );

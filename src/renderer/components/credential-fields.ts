@@ -15,14 +15,16 @@ export interface CredentialField {
   name: CredentialFieldName;
   /** Rendered as a password input. */
   secret: boolean;
-  /** Not needed to save (Qwen's 业务空间 ID). */
+  /** Not needed to save (Qwen's 业务空间 ID; Doubao's either-or fields). */
   optional?: boolean;
 }
 
 export const CREDENTIAL_FIELDS: Record<CredentialedEngineId, readonly CredentialField[]> = {
+  // New-console API Key, or the old console's App Key + Access Key pair.
   doubao: [
-    { name: 'appKey', secret: false },
-    { name: 'accessKey', secret: true }
+    { name: 'apiKey', secret: true, optional: true },
+    { name: 'appKey', secret: false, optional: true },
+    { name: 'accessKey', secret: true, optional: true }
   ],
   qwen: [
     { name: 'apiKey', secret: true },
@@ -42,8 +44,15 @@ const field = (draft: CredentialDraft, name: CredentialFieldName): string =>
 export const isCredentialDraftComplete = (
   engineId: CredentialedEngineId,
   draft: CredentialDraft
-): boolean =>
-  CREDENTIAL_FIELDS[engineId].every((f) => f.optional || field(draft, f.name).length > 0);
+): boolean => {
+  if (engineId === 'doubao') {
+    return (
+      field(draft, 'apiKey').length > 0 ||
+      (field(draft, 'appKey').length > 0 && field(draft, 'accessKey').length > 0)
+    );
+  }
+  return CREDENTIAL_FIELDS[engineId].every((f) => f.optional || field(draft, f.name).length > 0);
+};
 
 /** Trimmed payload; a blank optional field is sent as absent. */
 export const toCredentialsPayload = (
@@ -52,11 +61,14 @@ export const toCredentialsPayload = (
 ): SetCredentialsPayload => {
   switch (engineId) {
     case 'doubao':
-      return {
-        engineId,
-        appKey: field(draft, 'appKey'),
-        accessKey: field(draft, 'accessKey')
-      };
+      // An API Key wins: it's the new console's whole credential.
+      return field(draft, 'apiKey')
+        ? { engineId, apiKey: field(draft, 'apiKey') }
+        : {
+            engineId,
+            appKey: field(draft, 'appKey'),
+            accessKey: field(draft, 'accessKey')
+          };
     case 'qwen':
       return {
         engineId,

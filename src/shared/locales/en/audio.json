@@ -91,7 +91,7 @@
     "footnote": "Which app to listen to, and whether to play the translation, is set on the Meeting page."
   },
   "virtualDeviceHintMac": "BabelVoice (click Install to set up the driver, then set BabelVoice as the mic in your meeting app)",
-  "virtualDeviceHintWindows": "VB-Cable (Windows setup arrives in v2)",
+  "virtualDeviceHintWindows": "VB-Cable (click Install to download it from vb-audio.com and run the installer as administrator, then set CABLE Output as the mic in your meeting app)",
   "screenCaptureResetHint": "No popup? The request may have been denied earlier. Run `tccutil reset ScreenCapture {{bundleId}}` in a terminal and relaunch, or grant it manually in System Settings.",
   "deviceLabelMissing": "(device not authorized)"
 }

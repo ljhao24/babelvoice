@@ -4,10 +4,28 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-if [[ "$(uname -s)" != "Darwin" ]]; then
-  echo "Native audio bridge: skipping non-macOS host"
-  exit 0
-fi
+case "$(uname -s)" in
+  Darwin) ;;
+  MINGW*|MSYS*|CYGWIN*)
+    # Windows (Git Bash): WASAPI addon via MSVC. N-API is ABI-stable, so Node
+    # headers work for Electron (node-gyp's delay-load hook binds to the host
+    # exe). NODE_GYP_DISTURL lets a mirror serve the headers.
+    if [[ -n "${NODE_GYP_DISTURL:-}" ]]; then
+      ./node_modules/.bin/node-gyp rebuild --disturl="$NODE_GYP_DISTURL"
+    else
+      ./node_modules/.bin/node-gyp rebuild
+    fi
+    OUT_DIR="resources/native/win32-x64"
+    mkdir -p "$OUT_DIR"
+    cp "build/Release/babelvoice_native.node" "$OUT_DIR/babelvoice_native.node"
+    echo "Native bridge: copied to $OUT_DIR/babelvoice_native.node"
+    exit 0
+    ;;
+  *)
+    echo "Native audio bridge: skipping unsupported host"
+    exit 0
+    ;;
+esac
 
 ARCH="$(uname -m)"
 case "$ARCH" in

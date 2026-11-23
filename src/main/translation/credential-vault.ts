@@ -121,13 +121,16 @@ const PARSERS: {
   [K in Slot]: (json: Record<string, unknown>) => CredentialCache[K];
 } = {
   doubao: (json) => {
-    const parsed = json as Partial<DoubaoCredentials>;
+    const parsed = json as {
+      apiKey?: string;
+      appKey?: string;
+      accessKey?: string;
+      resourceId?: string;
+    };
+    const resourceId = parsed.resourceId || RESOURCE_ID;
+    if (parsed.apiKey) return { apiKey: parsed.apiKey, resourceId };
     return parsed.appKey && parsed.accessKey
-      ? {
-          appKey: parsed.appKey,
-          accessKey: parsed.accessKey,
-          resourceId: parsed.resourceId || RESOURCE_ID
-        }
+      ? { appKey: parsed.appKey, accessKey: parsed.accessKey, resourceId }
       : null;
   },
   // Qwen's blob is `{ apiKey }` plus an optional workspace ID.
@@ -191,18 +194,17 @@ export const getOpenAiCredentials = (): OpenAiCredentials | null =>
   load('openai');
 
 export const setDoubaoCredentials = (
-  c: { appKey: string; accessKey: string } | null
+  c: { apiKey: string } | { appKey: string; accessKey: string } | null
 ): void => {
   if (c === null) {
     cache.doubao = null;
     persist({ doubao: undefined });
     return;
   }
-  const full: DoubaoCredentials = {
-    appKey: c.appKey,
-    accessKey: c.accessKey,
-    resourceId: RESOURCE_ID
-  };
+  const full: DoubaoCredentials =
+    'apiKey' in c
+      ? { apiKey: c.apiKey, resourceId: RESOURCE_ID }
+      : { appKey: c.appKey, accessKey: c.accessKey, resourceId: RESOURCE_ID };
   cache.doubao = full;
   persist({ doubao: encrypt(JSON.stringify(full)) });
 };
@@ -249,7 +251,9 @@ export const getCredentialStatus = (): CredentialStatus => {
   };
   return {
     doubao: cur.doubao
-      ? { configured: true, appKeyTail: tail(cur.doubao.appKey) }
+      ? cur.doubao.apiKey
+        ? { configured: true, apiKeyTail: tail(cur.doubao.apiKey) }
+        : { configured: true, appKeyTail: tail(cur.doubao.appKey ?? '') }
       : { configured: false },
     qwen: cur.qwen
       ? {

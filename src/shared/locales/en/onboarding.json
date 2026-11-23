@@ -1,4 +1,23 @@
 {
+  "win": {
+    "step1": {
+      "desc": "Windows does not let apps pass audio to each other directly, so the free VB-Cable virtual audio device relays the translated voice into your meeting app. Install opens the VB-Audio website: download and unzip the package, right-click VBCABLE_Setup_x64.exe, choose Run as administrator, then click Install Driver. It is detected here automatically.",
+      "driverName": "VB-Cable virtual audio device",
+      "status": {
+        "installing": "Download VB-Cable from the page that just opened and run its installer as administrator. It is detected automatically once installed (some PCs need a restart).",
+        "installedAlive": "CABLE Input detected; translated speech will play into it."
+      },
+      "doneBanner": "VB-Cable virtual audio device detected"
+    },
+    "step2": {
+      "desc": "Microphone access lets BabelVoice translate what you say. Capturing meeting audio needs no extra permission on Windows.",
+      "screen": {
+        "title": "System audio (to capture the meeting)",
+        "desc": "No permission needed on Windows."
+      },
+      "tip": "If the microphone shows as not granted, open Settings → Privacy & security → Microphone and turn on Microphone access and <bold>Let desktop apps access your microphone</bold>, then come back here."
+    }
+  },
   "header": {
     "title": "Welcome to BabelVoice",
     "sub": "About two minutes to finish basic setup.",

@@ -36,10 +36,17 @@ export const registerCredentialsHandlers = (
       // Editing the active engine's creds doesn't affect an in-flight session.
       switch (payload.engineId) {
         case 'doubao': {
+          // New console: one API Key. Old console: App Key + Access Key.
+          if ('apiKey' in payload) {
+            const apiKey = payload.apiKey.trim();
+            if (!apiKey) throw new Error('doubao credentials require apiKey');
+            setDoubaoCredentials({ apiKey });
+            break;
+          }
           const appKey = payload.appKey.trim();
           const accessKey = payload.accessKey.trim();
           if (!appKey || !accessKey) {
-            throw new Error('doubao credentials require both appKey and accessKey');
+            throw new Error('doubao credentials require apiKey, or both appKey and accessKey');
           }
           setDoubaoCredentials({ appKey, accessKey });
           break;

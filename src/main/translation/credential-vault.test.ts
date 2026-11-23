@@ -134,6 +134,19 @@ describe('credential-vault', () => {
     expect(fresh.getDoubaoCredentials()?.appKey).toBe('app-1');
   });
 
+  it('stores and reports a new-console Doubao API Key', async () => {
+    const vault = await loadVault();
+    vault.setDoubaoCredentials({ apiKey: 'volc-key-1234' });
+    expect(vault.getDoubaoCredentials()).toEqual({
+      apiKey: 'volc-key-1234',
+      resourceId: 'volc.service_type.10053'
+    });
+    expect(vault.getCredentialStatus().doubao).toEqual({ configured: true, apiKeyTail: '1234' });
+
+    const fresh = await loadVault();
+    expect(fresh.getDoubaoCredentials()?.apiKey).toBe('volc-key-1234');
+  });
+
   it('keeps reading a plain: blob as-is while safeStorage is unavailable', async () => {
     disk.data.credentials = { openai: plainBlob({ apiKey: 'sk-plain' }) };
     keychain.available = false;

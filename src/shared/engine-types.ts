@@ -125,7 +125,8 @@ export const DEFAULT_ENGINE_CONFIGS: EngineConfigs = {
  * primary key (for visual confirmation) are forwarded over IPC.
  */
 export interface CredentialStatus {
-  doubao: { configured: boolean; appKeyTail?: string };
+  /** `apiKeyTail` for a new-console API Key, `appKeyTail` for an old-console App Key. */
+  doubao: { configured: boolean; appKeyTail?: string; apiKeyTail?: string };
   /** `workspaceId` is not a secret (it's part of a hostname), so it's shown in full. */
   qwen: { configured: boolean; apiKeyTail?: string; workspaceId?: string };
   gemini: { configured: boolean; apiKeyTail?: string };

@@ -90,7 +90,7 @@
     "footnote": "收听哪个应用、要不要播放译音，在「会议」页设置。"
   },
   "virtualDeviceHintMac": "BabelVoice（点击「安装」配置驱动；安装后将会议软件麦克风设为 BabelVoice）",
-  "virtualDeviceHintWindows": "VB-Cable（Windows 引导将于 v2 提供）",
+  "virtualDeviceHintWindows": "VB-Cable（点击「安装」从 vb-audio.com 下载，以管理员身份运行安装程序；安装后将会议软件麦克风设为 CABLE Output）",
   "screenCaptureResetHint": "若未出现弹窗，可能是此前已拒绝授权。可在终端运行 `tccutil reset ScreenCapture {{bundleId}}` 后重启应用，或在系统设置中手动开启。",
   "deviceLabelMissing": "（设备未授权）"
 }

@@ -10,6 +10,7 @@ describe('CREDENTIAL_FIELDS', () => {
     const masked = (id: keyof typeof CREDENTIAL_FIELDS) =>
       CREDENTIAL_FIELDS[id].map((f) => [f.name, f.secret]);
     expect(masked('doubao')).toEqual([
+      ['apiKey', true],
       ['appKey', false],
       ['accessKey', true]
     ]);
@@ -23,10 +24,16 @@ describe('CREDENTIAL_FIELDS', () => {
 });
 
 describe('isCredentialDraftComplete', () => {
-  it('needs both Doubao keys', () => {
+  it('needs both old-console Doubao keys', () => {
+    expect(isCredentialDraftComplete('doubao', {})).toBe(false);
     expect(isCredentialDraftComplete('doubao', { appKey: 'a' })).toBe(false);
     expect(isCredentialDraftComplete('doubao', { appKey: 'a', accessKey: '  ' })).toBe(false);
     expect(isCredentialDraftComplete('doubao', { appKey: 'a', accessKey: 'b' })).toBe(true);
+  });
+
+  it('takes a new-console Doubao API Key on its own', () => {
+    expect(isCredentialDraftComplete('doubao', { apiKey: 'k' })).toBe(true);
+    expect(isCredentialDraftComplete('doubao', { apiKey: '  ', appKey: 'a' })).toBe(false);
   });
 
   it('treats the Qwen workspace as optional', () => {
@@ -50,6 +57,13 @@ describe('toCredentialsPayload', () => {
     expect(toCredentialsPayload('openai', { apiKey: ' sk-1 ' })).toEqual({
       engineId: 'openai',
       apiKey: 'sk-1'
+    });
+  });
+
+  it('sends a Doubao API Key alone when one is given', () => {
+    expect(toCredentialsPayload('doubao', { apiKey: ' k ', appKey: 'a', accessKey: 'b' })).toEqual({
+      engineId: 'doubao',
+      apiKey: 'k'
     });
   });
 

@@ -211,7 +211,10 @@ export function Step3Engine({
             engineId={engineId}
             fieldText={(name) => ({
               label: fieldLabels[name],
-              placeholder: KEY_PLACEHOLDERS[engineId]?.[name] ?? fieldLabels[name]
+              placeholder:
+                engineId === 'doubao'
+                  ? tSettings(`translation.doubao.${name === 'apiKey' ? 'key' : name}Placeholder`)
+                  : (KEY_PLACEHOLDERS[engineId]?.[name] ?? fieldLabels[name])
             })}
             submitLabel={
               saving
@@ -240,7 +243,9 @@ export function Step3Engine({
               }}
             >
               {engineId === 'doubao'
-                ? t('step3.savedHintDoubao', { tail: status.doubao.appKeyTail ?? '' })
+                ? status.doubao.apiKeyTail
+                  ? t('step3.savedHintApiKey', { tail: status.doubao.apiKeyTail })
+                  : t('step3.savedHintDoubao', { tail: status.doubao.appKeyTail ?? '' })
                 : t('step3.savedHintApiKey', { tail: status[engineId]?.apiKeyTail ?? '' })}
             </span>
             <button className="btn btn-ghost" onClick={() => setEditing(true)}>
